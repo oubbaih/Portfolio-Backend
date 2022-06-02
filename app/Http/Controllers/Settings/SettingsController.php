@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
+use App\Models\Settings\Setting;
 use Illuminate\Http\Request;
 
 class SettingsController extends Controller
@@ -15,7 +16,8 @@ class SettingsController extends Controller
     public function index()
     {
         //
-        return view('Dashboard.Settings.index');
+        $setting = Setting::all()->first();
+        return view('Dashboard.Settings.index', compact('setting'));
     }
 
     /**
@@ -71,6 +73,8 @@ class SettingsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        Setting::create($request->except('_token', '_method'));
+        return back();
     }
 
     /**
