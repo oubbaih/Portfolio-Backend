@@ -54,17 +54,29 @@
                       @endif " id="{{$key}}" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="form-group">
                                 <label for="inputPassword5">Full Name {{$key}}</label>
-                                <input type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
+                                <input   @if ($key === 'ar')
+                                    dir="rtl"
+                                @endif   type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
                                     name="{{$key}}[fullname]" value="{{$setting->translate($key)->fullname }}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Job Title {{$key}} </label>
-                                <input type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
+                                <input  @if ($key === 'ar')
+                                    dir="rtl"
+                                @endif type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
                                     name="{{$key}}[jobTitle]" value="{{$setting->translate($key)->jobTitle }}">
                             </div>
                             <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Description</label>
+                                <textarea  @if ($key === 'ar')
+                                    dir="rtl"
+                                @endif class="form-control"  name="{{$key}}[description]" id="exampleFormControlTextarea1" rows="3">{{$setting->translate($key)->description}}</textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputPassword5">Copy Right {{$key}} </label>
-                                <input type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
+                                <input   @if ($key === 'ar')
+                                    dir="rtl"
+                                @endif  type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
                                     name="{{$key}}[copyright]" value="{{$setting->translate($key)->copyright}}">
                             </div>
                             <div class="form-group">

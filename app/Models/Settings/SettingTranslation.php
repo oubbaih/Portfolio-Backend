@@ -9,5 +9,5 @@ class SettingTranslation extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['fullname', 'jobTitle', 'copyright'];
+    protected $fillable = ['fullname', 'jobTitle', 'copyright', 'description'];
 }

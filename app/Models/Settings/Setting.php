@@ -12,7 +12,7 @@ class Setting extends Model implements TranslatableContract
 {
     use Translatable;
     use HasFactory;
-    public $translatedAttributes = ['fullname', 'jobTitle', 'copyright'];
+    public $translatedAttributes = ['fullname', 'jobTitle', 'copyright', 'description'];
     protected $fillable = ['author', 'favicon', 'logo', 'bgImage', 'personalImage'];
 
     public static function CheckSettings()
@@ -24,6 +24,7 @@ class Setting extends Model implements TranslatableContract
                 $data[$key]['fullname'] = $value;
                 $data[$key]['jobTitle'] = $value;
                 $data[$key]['copyright'] = $value;
+                $data[$key]['description'] = $value;
             }
             self::create($data);
         }

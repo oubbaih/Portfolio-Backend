@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('locale')->index();
             $table->string('fullname');
             $table->text('jobTitle');
+            $table->text('description');
             $table->text('copyright');
             $table->unique(['setting_id', 'locale']);
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
