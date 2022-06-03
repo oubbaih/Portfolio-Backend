@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('author');
+            $table->string('favicon');
+            $table->string('logo');
+            $table->string('persnalImage');
+            $table->string('bgImage');
             $table->timestamps();
         });
     }
