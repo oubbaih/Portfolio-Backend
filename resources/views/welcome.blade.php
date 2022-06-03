@@ -9,18 +9,19 @@
 </head>
 
 <body>
-    @if (isset($ff) > 0)
-    @foreach ($ff->test as $item => $value)
-    {{$value}} <em>/</em>
+    <ul>
+    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+        <li>
+            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                {{ $properties['native'] }}
+            </a>
+        </li>
     @endforeach
-    @endif
+</ul>
+ <h1>{{__('words.home')}}</h1>
 
-
-    <form action="{{route('home.store')}}" method="post">
-        @csrf
-        <input type="text" name="test">
-        <button type="submit">submit</button>
-    </form>
+    <h1>{{$setting->fullname}}</h1>
+     
 
 </body>
 

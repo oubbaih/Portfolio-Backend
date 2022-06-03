@@ -10305,3 +10305,10 @@ base-chart.chart {
         margin-right: 200px !important;
     }
 }
+
+/* Porsonal Setup Css  */
+
+.setting-img {
+    width: 10%;
+    margin-left: 2rem;
+}

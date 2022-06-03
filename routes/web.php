@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::post('/', Controller::class . '@store')->name('home.store');
-// Route::get('/', Controller::class . '@index')->name('home');
+Route::get('/', Controller::class . '@index')->name('home');
 
 Route::prefix('dashboard')->group(function () {
   Route::get('/', DashboardController::class . '@index')->name('dashboard');

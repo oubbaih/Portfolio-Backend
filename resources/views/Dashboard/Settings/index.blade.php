@@ -1,25 +1,36 @@
 <x-dashboard-master>
     @section('main')
     <div class="container-fluid">
-        <form action="{{route('setting.update' , $id=1)}}" method="POST">
+        <form action="{{route('setting.update' , $setting)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="card">
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Settings
                 </div>
+                <img src="{{asset($setting->favicon)}}" class="setting-img" alt="">
                 <div class="card-block">
                     <div class="form-group">
                         <label for="faviconid" class="form-label">FavIcon</label>
                         <input type="file" name="favicon" class="form-control-file">
                     </div>
+                    <img src="{{asset($setting->logo)}}" class="setting-img" alt="">
+
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Logo Image</label>
                         <input type="file" name="logo" class="form-control-file">
                     </div>
+                    <img src="{{asset($setting->persnalImage)}}" class="setting-img" alt="">
+
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Personal Image</label>
-                        <input type="file" name="personalImage" class="form-control-file">
+                        <input type="file" name="persnalImage" class="form-control-file">
+                    </div>
+                    <img src="{{asset($setting->bgImage)}}" class="setting-img" alt="">
+
+                    <div class="form-group">
+                        <label for="faviconid" class="form-label">Background Image</label>
+                        <input type="file" name="bgImage" class="form-control-file">
                     </div>
                 </div>
                 <div class="card-block">
@@ -44,12 +55,12 @@
                             <div class="form-group">
                                 <label for="inputPassword5">Full Name {{$key}}</label>
                                 <input type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[fullname]" value="{{$setting->translate($key)->fullname}}">
+                                    name="{{$key}}[fullname]" value="{{$setting->translate($key)->fullname }}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Job Title {{$key}} </label>
                                 <input type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[jobTitle]" value="{{$setting->translate($key)->jobTitle}}">
+                                    name="{{$key}}[jobTitle]" value="{{$setting->translate($key)->jobTitle }}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Copy Right {{$key}} </label>
