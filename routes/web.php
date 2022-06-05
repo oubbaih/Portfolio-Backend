@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\About\AboutController;
+use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Portfolio\PortfolioController;
 use App\Http\Controllers\Settings\SettingsController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +24,11 @@ Route::get('/', Controller::class . '@index')->name('home');
 
 Route::prefix('dashboard')->group(function () {
   Route::get('/', DashboardController::class . '@index')->name('dashboard');
-  Route::resource('setting', SettingsController::class);
+  Route::resources([
+    'setting' => SettingsController::class,
+    'about' => AboutController::class,
+    'portfolio' => PortfolioController::class,
+    'contact' => ContactController::class,
+
+  ]);
 });
