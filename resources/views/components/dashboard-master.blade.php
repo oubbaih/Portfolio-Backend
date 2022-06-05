@@ -120,6 +120,8 @@
     <!-- Custom scripts required by this view -->
     <script src="{{asset('js/views/main.js')}}"></script>
 
+    @yield('scripts')
+
     <!-- Grunt watch plugin -->
 </body>
 

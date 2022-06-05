@@ -10,8 +10,8 @@ use Astrotomic\Translatable\Translatable;
 class Project extends Model implements TranslatableContract
 {
     use Translatable;
-    public $translatedAttributes = ['casestudy', 'myrole', 'client', 'year', 'description', 'agencyname'];
-    protected $fillable = ['filename'];
+    public $translatedAttributes = ['casestudy', 'myrole', 'client', 'description', 'agencyname'];
+    protected $fillable = ['filename', 'year'];
 
     use HasFactory;
 }

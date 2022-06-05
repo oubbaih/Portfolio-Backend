@@ -9,5 +9,5 @@ class ProjectTranslation extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable =  ['casestudy', 'myrole', 'client', 'year', 'description', 'agencyname'];
+    protected $fillable =  ['casestudy', 'myrole', 'client', 'description', 'agencyname'];
 }

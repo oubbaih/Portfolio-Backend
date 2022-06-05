@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('project_translations', function (Blueprint $table) {
-            $table->id();
+        Schema::create('projects_translations', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('project_id')->unsigned();
+            $table->string('locale')->index();
             $table->string('casestudy')->nullable();
             $table->string('myrole')->nullable();
             $table->string('client')->nullable();
-            $table->string('year')->nullable();
-            $table->text('description')->nullable();
+            $table->string('description')->nullable();
             $table->string('agencyname')->nullable();
             $table->unique(['project_id', 'locale']);
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_translations');
+        Schema::dropIfExists('projects_translations');
     }
 };
