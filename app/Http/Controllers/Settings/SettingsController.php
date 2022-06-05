@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Settings\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class SettingsController extends Controller
 {
@@ -75,6 +76,7 @@ class SettingsController extends Controller
         //
         $setting->update($request->except('_token', 'logo', 'favicon', 'personalImage', 'bgImage'));
         if ($request->file('favicon')) {
+            // dd($setting->favicon);
             $this->UnlinkImage($setting->favicon);
             $path = $this->ImageImport($request, 'favicon');
             $setting->favicon = $path;
@@ -115,8 +117,9 @@ class SettingsController extends Controller
     {
         $file = $request->file($name);
         $filename = $file->getClientOriginalName();
-        $file->move(public_path('images/'), $filename);
-        $path = 'images/' . $filename;
+        $file_path = Str::uuid() . $filename;
+        $file->move(public_path('images/'), $file_path);
+        $path = 'images/' . $file_path;
         return $path;
     }
     function UnlinkImage($image_path)

@@ -13,7 +13,7 @@
     <section id="header" class="header">
         <div class="container">
             <div class="header_logo">
-                <img src="images/jkj.png" class="header_logo-img" alt="header logo" />
+                <img src="{{asset($setting->bgImage)}}" class="header_logo-img" alt="header logo" />
             </div>
             <div class="row">
                 <div class="col-4 header_personal d-md-block">
