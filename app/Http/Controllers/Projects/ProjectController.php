@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Projects;
 use App\Http\Controllers\Controller;
 use App\Models\Project\Project;
 use Illuminate\Http\Request;
-use DataTables;
+use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
@@ -20,17 +20,16 @@ class ProjectController extends Controller
     // Yarja DataTable Setup 
     public function getAllProjects(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Project::latest()->get();
-            return Datatables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function ($row) {
-                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-        }
+
+        $data = Project::select('*');
+        return Datatables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $actionBtn = '<a href="' . Route('project.edit', $row) . '" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                return $actionBtn;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
 
 
@@ -100,6 +99,8 @@ class ProjectController extends Controller
     public function edit($id)
     {
         //
+        $project = Project::findOrFail($id);
+        return view('Dashboard.Projects.edit', compact('project'));
     }
 
     /**
@@ -109,9 +110,29 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
         //
+        $project->update($request->except('_token', 'filename'));
+        if ($request->file('filename')) {
+            $files = $request->file('filename');
+            $images = [];
+            foreach ($files as $file) {
+                if ($project->filename) {
+                    foreach ($project->filename as $image) {
+                        $this->UnlinkImage($image);
+                    }
+                }
+                $filename = $file->getClientOriginalName();
+                $file_path = Str::uuid() . $filename;
+                $file->move(public_path('images/'), $file_path);
+                $path = 'images/' . $file_path;
+                array_push($images, $path);
+            }
+            $project->filename = $images;
+        }
+        $project->save();
+        return back();
     }
 
     /**

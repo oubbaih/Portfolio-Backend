@@ -1,4 +1,7 @@
 <x-dashboard-master>
+    @section('styles')
+     <link href="{{asset('css/summernote-bs4.min.css')}}" rel="stylesheet">
+    @endsection
     @section('main')
     <div class="container-fluid">
         <form action="{{route('project.store' )}}" method="POST" enctype="multipart/form-data">
@@ -7,17 +10,17 @@
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Create Project
                 </div>
-            
+
                 <div class="card-block">
 
 
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Multiple Images</label>
-                        <input type="file" name="filename[]" class="form-control-file"  multiple="multiple">
+                        <input type="file" name="filename[]" class="form-control-file" multiple="multiple">
                     </div>
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Year Of Project Creation</label>
-                        <input type="text" name="year"  class="form-control" aria-describedby="textHelpBlock">
+                        <input type="text" name="year" class="form-control" aria-describedby="textHelpBlock">
                     </div>
                 </div>
                 <div class="card-block">
@@ -41,30 +44,28 @@
                       @endif " id="{{$key}}" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="form-group">
                                 <label for="inputPassword5">Case Study</label>
-                                <input   @if ($key === 'ar')
-                                    dir="rtl"
-                                @endif   type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[casestudy]" >
+                                <input @if ($key==='ar' ) dir="rtl" @endif type="text" id="inputtext"
+                                    class="form-control" aria-describedby="textHelpBlock" name="{{$key}}[casestudy]">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">My Role</label>
-                                <input  @if ($key === 'ar')
-                                    dir="rtl"
-                                @endif type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[myrole]" >
+                                <input @if ($key==='ar' ) dir="rtl" @endif type="text" id="inputtext"
+                                    class="form-control" aria-describedby="textHelpBlock" name="{{$key}}[myrole]">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea  @if ($key === 'ar')
-                                    dir="rtl"
-                                @endif class="form-control"  name="{{$key}}[description]" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="summernote">Description</label>
+                                <textarea @if ($key==='ar' ) dir="rtl" @endif class="form-control"
+                                    name="{{$key}}[description]" id="summernote" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Agency Name </label>
-                                <input   @if ($key === 'ar')
-                                    dir="rtl"
-                                @endif  type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[agencyname]">
+                                <input @if ($key==='ar' ) dir="rtl" @endif type="text" id="inputtext"
+                                    class="form-control" aria-describedby="textHelpBlock" name="{{$key}}[agencyname]">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword5">Client Name</label>
+                                <input @if ($key==='ar' ) dir="rtl" @endif type="text" id="inputtext"
+                                    class="form-control" aria-describedby="textHelpBlock" name="{{$key}}[client]">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Create Project</button>
@@ -78,5 +79,19 @@
     </div>
     </form>
     </div>
+    @endsection
+
+    @section('scripts')
+    <script src="{{asset('js/summernote-bs4.min.js')}}"></script>
+
+   
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Hello Bootstrap 4',
+            tabsize: 2,
+            height: 100
+        });
+
+    </script>
     @endsection
 </x-dashboard-master>
