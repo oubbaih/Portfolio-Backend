@@ -74,8 +74,13 @@ class ProjectController extends Controller
                 array_push($images, $path);
             }
             $project->filename = $images;
-            $project->save();
         }
+        if ($request->file('featureImage')) {
+            $path = $this->ImageImport($request, 'featureImage');
+            $project->featureImage = $path;
+        }
+
+        $project->save();
         return back();
     }
 
@@ -130,6 +135,13 @@ class ProjectController extends Controller
                 array_push($images, $path);
             }
             $project->filename = $images;
+        }
+        if ($request->file('featureImage')) {
+            if ($project->featureImage == null) {
+                $this->UnlinkImage($project->featureImage);
+            }
+            $path = $this->ImageImport($request, 'featureImage');
+            $project->featureImage = $path;
         }
         $project->save();
         return back();

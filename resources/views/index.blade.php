@@ -58,63 +58,24 @@
                 <h5 class="case-study_project">{{__('words.selected_projects')}}</h5>
                 <h1 class="case-study_title">{{__('words.case_studies')}}</h1>
                 <div class="row mt-5">
-                    <div class="col-md-6 col-sm-12 mb-4">
+                    @foreach ($projects as $project)
+                        <div class="col-md-6 col-sm-12 mb-4">
                         <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2021/10/24/18/16/stream-6738889__340.jpg"
-                                class="card-img" alt="..." />
+                            <img src="{{asset($project->featureImage)}}"
+                                class="card-img" alt=" {{$project->casestudy}}" />
                             <div class="card-img-overlay">
-                                <p class="card-text">2018 - 2022</p>
+                                <p class="card-text">{{$project->year}}</p>
                                 <h5 class="card-title">
-                                    ful stack - blog multi user with laravel
+                                    {{$project->casestudy}}
                                 </h5>
                                 <a class="card-link"
                                     href="/portfolio.html">{{__('words.view_case_study')}}<span>&#8594;</span>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 mb-4">
-                        <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2021/11/17/16/40/bike-ride-6804105__340.jpg"
-                                class="card-img" alt="..." />
-                            <div class="card-img-overlay">
-                                <p class="card-text">2018 - 2022</p>
-                                <h5 class="card-title">
-                                    ful stack - blog multi user with laravel
-                                </h5>
-                                <a class="card-link" href="#">{{__('words.view_case_study')}}<span>&#8594;</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 mb-4">
-                        <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2020/09/16/04/02/skyline-5575251__340.jpg"
-                                class="card-img" alt="..." />
-                            <div class="card-img-overlay">
-                                <p class="card-text">2018 - 2022</p>
-                                <h5 class="card-title">
-                                    ful stack - blog multi user with laravel
-                                </h5>
-                                <a class="card-link" href="#">{{__('words.view_case_study')}}<span>&#8594;</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 mb-4">
-                        <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2019/04/03/03/06/treatment-4099432__340.jpg"
-                                class="card-img" alt="..." />
-                            <div class="card-img-overlay">
-                                <p class="card-text">2018 - 2022</p>
-                                <h5 class="card-title">
-                                    ful stack - blog multi user with laravel
-                                </h5>
-                                <a class="card-link" href="#">{{__('words.view_case_study')}}<span>&#8594;</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                 </div>
             </div>
         </section>

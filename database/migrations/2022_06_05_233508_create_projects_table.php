@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('year')->nullable();
             $table->json('filename')->nullable();
+            $table->string('featureImage')->nullable();
             $table->timestamps();
         });
     }

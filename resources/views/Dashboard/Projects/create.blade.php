@@ -19,6 +19,10 @@
                         <input type="file" name="filename[]" class="form-control-file" multiple="multiple">
                     </div>
                     <div class="form-group">
+                        <label for="faviconid" class="form-label">Featured Image</label>
+                        <input type="file" name="featureImage" class="form-control-file" >
+                    </div>
+                    <div class="form-group">
                         <label for="faviconid" class="form-label">Year Of Project Creation</label>
                         <input type="text" name="year" class="form-control" aria-describedby="textHelpBlock">
                     </div>
