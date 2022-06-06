@@ -1,10 +1,10 @@
 <x-frontend-master>
     @section('load')
-        <div class="loader show" id="loading">
+    <div class="loader show" id="loading">
         <div class="loader_icon"></div>
         <div class="loader_text">
-            <h5 class="loader_text-title">welcome</h5>
-            <p class="loader_text-des">wait a bite ...</p>
+            <h5 class="loader_text-title">{{__('words.welcome')}}</h5>
+            <p class="loader_text-des">{{__('words.wait_a_bit')}} ...</p>
         </div>
     </div>
     @endsection
@@ -29,9 +29,9 @@
                             </p>
                         </div>
                         <div>
-                            <a href="#" class="header_content-links m-2">view Projects</a>
-                            or
-                            <a href="#" class="header_content-links m-2"> Read about me</a>
+                            <a href="#" class="header_content-links m-2">{{__('words.view_project')}}</a>
+                            {{__('words.or')}}
+                            <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
                         </div>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
 
         <section id="case-study" class="case-study">
             <div class="container">
-                <h5 class="case-study_project">selected projects</h5>
-                <h1 class="case-study_title">case studies</h1>
+                <h5 class="case-study_project">{{__('words.selected_projects')}}</h5>
+                <h1 class="case-study_title">{{__('words.case_studies')}}</h1>
                 <div class="row mt-5">
                     <div class="col-md-6 col-sm-12 mb-4">
                         <div class="card bg-dark text-white">
@@ -67,7 +67,8 @@
                                 <h5 class="card-title">
                                     ful stack - blog multi user with laravel
                                 </h5>
-                                <a class="card-link" href="/portfolio.html">view case study<span>&#8594;</span>
+                                <a class="card-link"
+                                    href="/portfolio.html">{{__('words.view_case_study')}}<span>&#8594;</span>
                                 </a>
                             </div>
                         </div>
@@ -81,7 +82,7 @@
                                 <h5 class="card-title">
                                     ful stack - blog multi user with laravel
                                 </h5>
-                                <a class="card-link" href="#">view case study<span>&#8594;</span>
+                                <a class="card-link" href="#">{{__('words.view_case_study')}}<span>&#8594;</span>
                                 </a>
                             </div>
                         </div>
@@ -95,7 +96,7 @@
                                 <h5 class="card-title">
                                     ful stack - blog multi user with laravel
                                 </h5>
-                                <a class="card-link" href="#">view case study<span>&#8594;</span>
+                                <a class="card-link" href="#">{{__('words.view_case_study')}}<span>&#8594;</span>
                                 </a>
                             </div>
                         </div>
@@ -109,7 +110,7 @@
                                 <h5 class="card-title">
                                     ful stack - blog multi user with laravel
                                 </h5>
-                                <a class="card-link" href="#">view case study<span>&#8594;</span>
+                                <a class="card-link" href="#">{{__('words.view_case_study')}}<span>&#8594;</span>
                                 </a>
                             </div>
                         </div>
@@ -124,9 +125,9 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12">
-                        <p class="work_alert">need a full stack developer?</p>
+                        <p class="work_alert">{{__('words.need_a_full_stack_developer')}}</p>
                         <div class="work_link">
-                            <a class="h1" href="#">let's work together</a>
+                            <a class="h1" href="{{route('contact.index')}}">{{__('words.lets_work_together')}}</a>
                             <span>&#8594;</span>
                         </div>
                     </div>
@@ -134,12 +135,12 @@
             </div>
         </section>
         <!-- ==========================    Work Together End     ==========================  -->
+
+
+        <!-- ==========================    Main Conten End     ==========================  -->
+
+
     </div>
     @endsection
-
-    <!-- ==========================    Main Conten End     ==========================  -->
-
-
-
 
 </x-frontend-master>

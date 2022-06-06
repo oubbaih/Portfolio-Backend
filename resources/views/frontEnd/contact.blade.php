@@ -5,8 +5,8 @@
           <div class="loader show" id="loading">
       <div class="loader_icon"></div>
       <div class="loader_text">
-        <h5 class="loader_text-title">contact</h5>
-        <p class="loader_text-des">get in touch</p>
+        <h5 class="loader_text-title">{{__('words.contact')}}</h5>
+        <p class="loader_text-des">{{__('words.get_in_touch')}}</p>
       </div>
     </div>
   @endsection
@@ -28,10 +28,10 @@
             ></iframe>
           </div>
           <div class="contact-main_wrapper-simple">
-            <p class="word-1">let's</p>
-            <p class="word-2">wor<span>k</span></p>
-            <p class="word-3">toge</p>
-            <p class="word-4">ther</p>
+            <p class="word-1">{{__('words.lets')}}</p>
+            <p class="word-2">{{__('words.wor')}}<span>{{__('words.k')}}</span></p>
+            <p class="word-3">{{__('words.toge')}}</p>
+            <p class="word-4">{{__('words.ther')}}</p>
           </div>
         </div>
 
@@ -40,73 +40,73 @@
         <section class="contact-section">
           <div class="row">
             <div class="col-md-12 col-lg-4">
-              <h5 class="contact-section_small mt-5">contact</h5>
+              <h5 class="contact-section_small mt-5">{{__('words.contact')}}</h5>
               <h3 class="contact-section_big">
-                Get in touch — let’s work together.
+               {{__('words.get')}}
               </h3>
               <div class="contact-section_text">
-                <span>address</span>
-                <p>hay sous hotel, les amandies tafraout tiznit</p>
+                <h5 class="contact-section_small mt-5">{{__('words.address')}}</h5>
+                <h3>{{$setting->address}}</h3>
               </div>
             </div>
             <div class="col-md-12 col-lg-8">
               <h3 class="contact-section-form_info">
-                Got a project? Drop me a line if you want to work together on
-                something exciting. Big or small. Mobile or web.
+               {{__('words.contact_message')}}
               </h3>
               <form action="" class="contact-section-form_inputs">
                 <div class="row g-3">
                   <div class="col">
-                    <label class="form-label" for="inputName">your name</label>
+                    <label class="form-label" for="inputName">{{__('words.your_name')}}</label>
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="First name"
-                      aria-label="First name"
+                      placeholder="{{__('words.your_name')}}"
+                      aria-label="{{__('words.your_name')}}"
                     />
                   </div>
                   <div class="col">
                     <label class="form-label" for="inputEmail"
-                      >your email</label
+                      >{{__('words.your_email')}}</label
                     >
                     <input
-                      type="text"
+                      type="email"
                       class="form-control"
-                      placeholder="Last name"
-                      aria-label="Last name"
+                      placeholder="{{__('words.your_email')}}"
+                      aria-label="{{__('words.your_email')}}"
                     />
                   </div>
                 </div>
                 <div class="row g-3">
                   <div class="col">
-                    <label class="form-label" for="inputName">services</label>
+                    <label class="form-label" for="inputName">{{__('words.services')}}</label>
                     <select
                       class="form-select"
                       aria-label="Default select example"
                     >
-                      <option selected>what are you intersted in?</option>
+                      <option selected>{{__('words.what_are_you_intersted_in')}}</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select>
                   </div>
                   <div class="col">
-                    <label class="form-label" for="inputEmail">budget</label>
+                    <label class="form-label" for="inputEmail">{{__('words.budget')}}</label>
                     <select
                       class="form-select"
                       aria-label="Default select example"
                     >
-                      <option selected>what's your budget</option>
+                      <option selected>{{__('words.whats_your_budget')}}</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select>
                   </div>
+                  <label class="form-label" for="inputEmail">{{__('words.whats_your_message')}}</label>
                   <input
                     type="text"
                     class="form-control mt-5"
-                    placeholder="what's your message"
-                    aria-label="First name"
+                    placeholder="{{__('words.whats_your_message')}}"
+                    aria-label="{{__('words.whats_your_message')}}"
                   />
                 </div>
                 <button class="btn-custom" type>
@@ -122,7 +122,7 @@
                       d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
                     />
                   </svg>
-                  send message
+                  {{__('words.send_message')}}
                 </button>
               </form>
             </div>

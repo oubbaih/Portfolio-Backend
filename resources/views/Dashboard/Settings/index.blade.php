@@ -80,6 +80,13 @@
                                     name="{{$key}}[copyright]" value="{{$setting->translate($key)->copyright}}">
                             </div>
                             <div class="form-group">
+                                <label for="inputPassword5">Address Location {{$key}} </label>
+                                <input   @if ($key === 'ar')
+                                    dir="rtl"
+                                @endif  type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
+                                    name="{{$key}}[address]" value="{{$setting->translate($key)->address}}">
+                            </div>
+                            <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>

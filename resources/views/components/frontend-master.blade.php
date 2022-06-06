@@ -55,7 +55,18 @@
                 margin-top: 2rem;
             }
         }
-
+        .case-study .card-link{
+            letter-spacing: 0px;
+        }
+        .case-study_project{
+            letter-spacing: 0;
+        }
+        .work_alert{
+            letter-spacing: 0;
+        }
+        .contact-section_small{
+            letter-spacing: 0;
+        }
     </style>
     @endif
 
@@ -89,7 +100,7 @@
                 <path
                     d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
             </svg>
-            <span class="contact_name">contact</span>
+            <span class="contact_name">{{__('words.contact')}}</span>
         </a>
     </div>
     <!-- ==========================    Contact Icon end    ==========================  -->
@@ -103,7 +114,7 @@
             </a>
             <button class="navbar-toggler menu" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                MENU
+               {{__('words.menu')}}
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-text-paragraph" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -125,19 +136,16 @@
                         <ul
                             class="navbar-nav justify-content-end flex-grow-1 p-4 align-items-center align-content-center">
                             <li class="nav-item">
-                                <span class="text-uppercase" style="font-size: 18px; color: #8b8e93">menu</span>
+                                <span class="text-uppercase" style="font-size: 18px; color: #8b8e93">{{__('words.menu')}}</span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('portfolio.index')}}">projects</a>
+                                <a class="nav-link" href="{{route('project.index')}}">{{__('words.projects')}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('about.index')}}">about me</a>
+                                <a class="nav-link" href="{{route('about.index')}}">{{__('words.about_me')}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('contact.index')}}">contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Dribble</a>
+                                <a class="nav-link" href="{{route('contact.index')}}">{{__('words.contact')}}</a>
                             </li>
                         </ul>
                     </div>
@@ -223,8 +231,8 @@
         <div class="conatainer">
             <p>
                 &copy;
-                                   document.write(new Date().getFullYear());
-
+                <script>
+                 document.write(new Date().getFullYear());
                 </script>
                 {!! $setting->copyright !!}
             </p>
