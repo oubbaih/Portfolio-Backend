@@ -11,7 +11,9 @@ class Project extends Model implements TranslatableContract
 {
     use Translatable;
     public $translatedAttributes = ['casestudy', 'myrole', 'client', 'description', 'agencyname'];
-    protected $fillable = ['filename', 'year'];
-
+    protected $fillable = ['year'];
+    protected $casts = [
+        'filename' => 'array'
+    ];
     use HasFactory;
 }

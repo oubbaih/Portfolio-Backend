@@ -1,7 +1,7 @@
 <x-dashboard-master>
     @section('main')
     <h1>Project Section</h1>
-    @endsection
+    
 
     <table class="table table-bordered yajra-datatable">
         <thead>
@@ -18,7 +18,17 @@
         <tbody>
         </tbody>
     </table>
+    @foreach ($projects as $project)
+    <h1>{{$project->casestudy}}</h1>
+    {{-- {{dd($project)}} --}}
+    @foreach ($project->filename as $image)
 
+    <img src="{{asset($image)}}" alt="">
+        
+    @endforeach 
+        
+    @endforeach
+@endsection
     @section('scripts')
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 

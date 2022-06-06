@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projects_translations', function (Blueprint $table) {
+        Schema::create('project_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('project_id')->unsigned();
             $table->string('locale')->index();
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects_translations');
+        Schema::dropIfExists('project_translations');
     }
 };

@@ -37,7 +37,8 @@ class ProjectController extends Controller
     public function index()
     {
         //
-        return view('Dashboard.Projects.index');
+        $projects = Project::all();
+        return view('Dashboard.Projects.index', compact('projects'));
     }
 
     /**
@@ -61,21 +62,21 @@ class ProjectController extends Controller
     {
         //
         // dd($request);
-        $rr = Project::created($request);
+        $project = Project::create($request->except('_token', 'filename'));
 
-
-        // if ($request->file('filename')) {
-        //     $files = $request->file('filename');
-        //     foreach ($files as $file) {
-
-
-        //         $filename = $file->getClientOriginalName();
-        //         $file_path = Str::uuid() . $filename;
-        //         $file->move(public_path('images/'), $file_path);
-        //         $path = 'images/' . $file_path;
-
-        //     }
-        // }
+        if ($request->file('filename')) {
+            $files = $request->file('filename');
+            $images = [];
+            foreach ($files as $file) {
+                $filename = $file->getClientOriginalName();
+                $file_path = Str::uuid() . $filename;
+                $file->move(public_path('images/'), $file_path);
+                $path = 'images/' . $file_path;
+                array_push($images, $path);
+            }
+            $project->filename = $images;
+            $project->save();
+        }
         return back();
     }
 

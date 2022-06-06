@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('year');
-            $table->string('filename');
+            $table->string('year')->nullable();
+            $table->json('filename')->nullable();
             $table->timestamps();
         });
     }
