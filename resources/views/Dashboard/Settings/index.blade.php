@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label  class="form-label" for="facebooid">Twitter URL</label>
-                        <input type="text" name="tw" class="form-control" value="{{$setting->tw}}>
+                        <input type="text" name="tw" class="form-control" value="{{$setting->tw}}">
                     </div>
                     <div class="form-group">
                         <label class="form-label"  for="facebooid">Instagram URL</label>
@@ -57,6 +57,14 @@
                     <div class="form-group">
                         <label class="form-label"  for="facebooid">Tiktok URL</label>
                         <input type="text" name="tk" class="form-control" value="{{$setting->tk}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"  for="facebooid">Email</label>
+                        <input type="email" name="email" class="form-control" value="{{$setting->email}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"  for="facebooid">phone</label>
+                        <input type="text" name="phone" class="form-control" value="{{$setting->phone}}">
                     </div>
                 </div>
                 <div class="card-block">

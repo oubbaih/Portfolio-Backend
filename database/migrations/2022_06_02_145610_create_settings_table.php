@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('persnalImage')->nullable();
             $table->string('bgImage')->nullable();
             $table->string('fb')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->string('tw')->nullable();
             $table->string('ink')->nullable();
             $table->string('yt')->nullable();

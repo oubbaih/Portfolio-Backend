@@ -176,18 +176,19 @@
             <hr />
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer_title">Contact information —</h5>
+                    <h5 class="footer_title">{{__('words.contact_information')}} —</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <p class="footer_text">
-                                Feel free to reach out to me any time. I prefer to talk over
-                                email, especially since we may be a few time zones away.
+                          {{__('words.contact_text')}}
                             </p>
+                            <span>E:{{$setting->email}} </span>
+                            <span>p:{{$setting->phone}} </span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer_title">Latest projects —</h5>
+                    <h5 class="footer_title">{{__('words.latest_projects')}} —</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="#">project</a>
@@ -201,22 +202,21 @@
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer_title">Follow me on —</h5>
+                    <h5 class="footer_title">{{__('words.follow_me_on')}} —</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">facebook</a>
-                            <a href="#" class="nav-link">youtube</a>
-                            <a href="#" class="nav-link">twitter</a>
+                            <a href="{{$setting->fb}}" class="nav-link">facebook</a>
+                            <a href="{{$setting->yt}}" class="nav-link">youtube</a>
+                            <a href="{{$setting->ftw}}" class="nav-link">twitter</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer_title">Current availability —</h5>
+                    <h5 class="footer_title">{{__('words.current_availability')}} —</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <p class="footer_text">
-                                Feel free to reach out to me any time. I prefer to talk over
-                                email, especially since we may be a few time zones away.
+                               {{__('words.availability_text')}}
                             </p>
                         </li>
                     </ul>

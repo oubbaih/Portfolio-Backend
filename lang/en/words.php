@@ -32,5 +32,11 @@ return [
   'whats_your_message' => 'what\'s your message',
   'contact_message' => ' Got a project? Drop me a line if you want to work together on something exciting. Big or small. Mobile or web.',
   'get' => 'Get in touch — let’s work together.',
+  'follow_me_on' => 'Follow me on',
+  'current_availability' => 'Current availability',
+  'contact_information' => 'Contact information',
+  'latest_projects' => 'Latest projects',
+  'availability_text' => ' I usually work on several projects but I’ll be happy to discuss new opportunities. Let’s get in touch!',
+  'contact_text' => ' Feel free to reach out to me any time. I prefer to talk over email, especially since we may be a few time zones away.',
 
 ];

@@ -32,6 +32,16 @@ return [
   'whats_your_message' => 'quel est votre message',
   'contact_message' => 'Vous avez un projet ? Écrivez-moi si vous voulez travailler ensemble sur quelque chose d\'excitant. Grand ou petit Mobile ou Web',
   'get' => 'Contactez-nous — travaillons ensemble.',
+  'follow_me_on' => 'Suivez-moi sur',
+  'current_availability' => 'Disponibilité actuelle',
+  'contact_information' => 'Informations de contact',
+  'latest_projects' => 'Dernier projets',
+  'availability_text' => 'Je travaille habituellement sur plusieurs projets, mais je serai heureux de discuter de nouvelles opportunités. Prenons contact !',
+  'contact_text' => 'N\'hésitez pas à me contacter à tout moment. Je préfère parler par e-mail, d\'autant plus que nous sommes peut-être éloignés de quelques fuseaux horaires.',
+
+
+
+
 
 
 
