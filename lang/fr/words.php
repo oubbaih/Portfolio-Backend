@@ -16,11 +16,6 @@ return [
   'projects' => 'projects',
   'about_me' => 'À propos de moi',
   'get_in_touch' => 'entrer en contact',
-  'lets'  => 'allons',
-  'wor' => 'trav',
-  'k' => 'ailler',
-  'toge' => 'ense',
-  'ther' => 'mble',
   'address' => 'adresse',
   'your_name' => 'votre nom',
   'your_email' => 'votre e-mail',
@@ -55,7 +50,11 @@ return [
   'tools' => 'outils que j\'utilise',
   'services' => 'prestations de service',
   'experience' => 'expérience',
-
+  'op1' => 'besoin d\'aide pour un projet ponctuel.',
+  'op2' => 'à la recherche d\'un partenariat à long terme',
+  'op3' => 'veux m\'embaucher à plein temps',
+  'op4' => 'je voulais juste dire bonjour!',
+  'more' => "ou plus",
 
 
 

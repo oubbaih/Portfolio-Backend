@@ -16,11 +16,6 @@ return [
   'projects' => 'projects',
   'about_me' => 'about me',
   'get_in_touch' => 'get in touch',
-  'lets'  => 'let\'s',
-  'wor' => 'wor',
-  'k' => 'k',
-  'toge' => 'toge',
-  'ther' => 'ther',
   'address' => 'address',
   'your_name' => 'your name',
   'your_email' => 'your email',
@@ -54,7 +49,11 @@ return [
   'tools' => 'tools i use',
   'services' => 'services',
   'experience' => 'experience',
-
+  'op1' => 'need help with a one-off project',
+  'op2' => 'looking for a long term partnership',
+  'op3' => 'want to hire me full-time',
+  'op4' => 'just wanted to say hi!',
+  'more' => "or more",
 
 
 

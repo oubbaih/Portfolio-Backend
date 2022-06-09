@@ -28,10 +28,10 @@
             ></iframe>
           </div>
           <div class="contact-main_wrapper-simple">
-            <p class="word-1">{{__('words.lets')}}</p>
-            <p class="word-2">{{__('words.wor')}}<span>{{__('words.k')}}</span></p>
-            <p class="word-3">{{__('words.toge')}}</p>
-            <p class="word-4">{{__('words.ther')}}</p>
+            <p class="word-1">let's</p>
+            <p class="word-2">wor<span>k</span></p>
+            <p class="word-3">toge</p>
+            <p class="word-4">ther</p>
           </div>
         </div>
 
@@ -53,7 +53,8 @@
               <h3 class="contact-section-form_info">
                {{__('words.contact_message')}}
               </h3>
-              <form action="" class="contact-section-form_inputs">
+              <form action="{{route('contact.store')}}" class="contact-section-form_inputs" method="POST">
+                @csrf
                 <div class="row g-3">
                   <div class="col">
                     <label class="form-label" for="inputName">{{__('words.your_name')}}</label>
@@ -62,6 +63,7 @@
                       class="form-control"
                       placeholder="{{__('words.your_name')}}"
                       aria-label="{{__('words.your_name')}}"
+                      name="name"
                     />
                   </div>
                   <div class="col">
@@ -73,6 +75,8 @@
                       class="form-control"
                       placeholder="{{__('words.your_email')}}"
                       aria-label="{{__('words.your_email')}}"
+                      name="email"
+
                     />
                   </div>
                 </div>
@@ -82,11 +86,14 @@
                     <select
                       class="form-select"
                       aria-label="Default select example"
+                      name="service"
+
                     >
                       <option selected>{{__('words.what_are_you_intersted_in')}}</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="1">{{__('words.op1')}}</option>
+                      <option value="2">{{__('words.op2')}}</option>
+                      <option value="3">{{__('words.op3')}}</option>
+                      <option value="4">{{__('words.op4')}}</option>
                     </select>
                   </div>
                   <div class="col">
@@ -94,20 +101,25 @@
                     <select
                       class="form-select"
                       aria-label="Default select example"
+                      name="budget"
+
                     >
                       <option selected>{{__('words.whats_your_budget')}}</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="1">$1000 - $2500</option>
+                      <option value="2">$2500 - $5000</option>
+                      <option value="3">$5000 - $10000</option>
+                      <option value="4">$10000 {{__('words.more')}}</option>
                     </select>
                   </div>
                   <label class="form-label" for="inputEmail">{{__('words.whats_your_message')}}</label>
-                  <input
+                  <textarea
                     type="text"
                     class="form-control mt-5"
                     placeholder="{{__('words.whats_your_message')}}"
                     aria-label="{{__('words.whats_your_message')}}"
-                  />
+                      name="message"
+
+                  ></textarea>
                 </div>
                 <button class="btn-custom" type>
                   <svg
