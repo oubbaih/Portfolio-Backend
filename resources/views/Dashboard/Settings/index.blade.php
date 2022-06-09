@@ -32,6 +32,32 @@
                         <label for="faviconid" class="form-label">Background Image</label>
                         <input type="file" name="bgImage" class="form-control-file">
                     </div>
+                    <hr>
+                    <label class="form-label" >Social Media </label>
+                    <div class="form-group">
+                        <label  class="form-label"  for="facebooid">Facebook URL</label>
+                        <input type="text" name="fb" class="form-control"  value="{{$setting->fb}}">
+                    </div>
+                    <div class="form-group">
+                        <label  class="form-label" for="facebooid">Twitter URL</label>
+                        <input type="text" name="tw" class="form-control" value="{{$setting->tw}}>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"  for="facebooid">Instagram URL</label>
+                        <input type="text" name="ink" class="form-control" value="{{$setting->ink}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"  for="facebooid">Youtube URL</label>
+                        <input type="text" name="yt" class="form-control" value="{{$setting->yt}}">
+                    </div>
+                    <div class="form-group">
+                        <label  class="form-label" for="facebooid">Linkden URL</label>
+                        <input type="text" name="lk" class="form-control" value="{{$setting->lk}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"  for="facebooid">Tiktok URL</label>
+                        <input type="text" name="tk" class="form-control" value="{{$setting->tk}}">
+                    </div>
                 </div>
                 <div class="card-block">
                     <hr>
