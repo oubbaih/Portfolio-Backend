@@ -55,17 +55,11 @@
                 margin-top: 2rem;
             }
         }
-        .case-study .card-link{
+        .case-study .card-link , .work_alert ,  .case-study_project, .contact-section_small{
             letter-spacing: 0px;
         }
-        .case-study_project{
-            letter-spacing: 0;
-        }
-        .work_alert{
-            letter-spacing: 0;
-        }
-        .contact-section_small{
-            letter-spacing: 0;
+        .about-header_small ,.services_small,.experience_small{
+            letter-spacing: 0
         }
     </style>
     @endif

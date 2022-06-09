@@ -35,7 +35,7 @@
                           active
                       @endif " id="{{$key}}" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="form-group">
-                                <label for="inputPassword5">Present Title</label>
+                                <label for="inputPassword5"  >Present Title</label>
                                 <input   @if ($key === 'ar')
                                     dir="rtl"
                                 @endif   type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"

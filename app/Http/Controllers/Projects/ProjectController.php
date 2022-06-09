@@ -66,6 +66,12 @@ class ProjectController extends Controller
         if ($request->file('filename')) {
             $files = $request->file('filename');
             $images = [];
+            if ($project->filename != null) {
+                foreach ($project->filename as $image) {
+                    # code...
+                    $this->UnlinkImage($image);
+                }
+            }
             foreach ($files as $file) {
                 $filename = $file->getClientOriginalName();
                 $file_path = Str::uuid() . $filename;

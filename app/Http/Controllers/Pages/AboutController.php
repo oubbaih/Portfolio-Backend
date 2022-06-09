@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Pages;
 use App\Http\Controllers\Controller;
 use App\Models\Pages\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class AboutController extends Controller
 {
@@ -74,6 +76,28 @@ class AboutController extends Controller
     {
         //
         $about->update($request->except('_token', 'images'));
+        if ($request->file('images')) {
+            // dd($request->images);
+            if ($about->images != null) {
+                foreach ($about->images as $image) {
+
+
+                    # code...
+                    $this->UnlinkImage($image);
+                }
+            }
+            $files = $request->file('images');
+            $images = [];
+            // dd($files);/
+            foreach ($files as $file) {
+                $filename = $file->getClientOriginalName();
+                $file_path = Str::uuid() . $filename;
+                $file->move(public_path('images/'), $file_path);
+                $path = 'images/' . $file_path;
+                array_push($images, $path);
+            }
+            $about->images = $images;
+        }
         $about->save();
         return back();
     }
@@ -87,5 +111,13 @@ class AboutController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    function UnlinkImage($image_path)
+    {
+        if (File::exists($image_path)) {
+            //File::delete($image_path);
+            unlink($image_path);
+        }
     }
 }

@@ -4,8 +4,8 @@
         <div class="loader show" id="loading">
       <div class="loader_icon"></div>
       <div class="loader_text">
-        <h5 class="loader_text-title">{{__('about_me')}}</h5>
-        <p class="loader_text-des">{{$about->present_title}}</p>
+        <h5 class="loader_text-title">{{__('words.about_me')}}</h5>
+        <p class="loader_text-des">{{\Illuminate\Support\Str::limit($about->present_title,40)}}</p>
       </div>
     </div>
     @endsection
@@ -38,27 +38,18 @@
           data-bs-ride="carousel"
         >
           <div class="carousel-inner">
-            <div class="carousel-item active">
+            @foreach ($about->images as $image)
+                <div class="carousel-item @if ($loop->index === 0)
+                    active
+                @endif ">
               <img
-                src="https://cdn.pixabay.com/photo/2017/08/07/16/36/cat-2605502__340.jpg"
+                src="{{asset($image)}}"
                 class="d-block w-100"
-                alt="..."
+                alt="{{$loop->index}}"
               />
             </div>
-            <div class="carousel-item">
-              <img
-                src="https://cdn.pixabay.com/photo/2019/09/19/06/04/young-woman-4488313__340.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://cdn.pixabay.com/photo/2021/11/17/16/40/bike-ride-6804105__340.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
+            @endforeach
+            
           </div>
           <button
             class="carousel-control-prev"
