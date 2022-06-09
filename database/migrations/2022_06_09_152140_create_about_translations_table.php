@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('locale')->index();
             $table->text('present_title')->nullable();
             $table->text('present_des')->nullable();
-            $table->json('tools')->nullable();
-            $table->json('services')->nullable();
+            $table->text('tools')->nullable();
+            $table->text('services')->nullable();
             $table->string('experience_title')->nullable();
             $table->string('experience_des')->nullable();
             $table->unique(['about_id', 'locale']);

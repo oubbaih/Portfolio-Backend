@@ -9,7 +9,6 @@
       </div>
     </div>
     @endsection
-    
     <!-- ==========================    Loader End    ==========================  -->
 
     <!-- ==========================    NavBar Start    ==========================  -->
@@ -89,16 +88,16 @@
             <div class="col-6">
               <h5 class="services_small">{{__('words.tools')}}</h5>
               <h3 class="services_big">
-                @foreach ($about->tools as $tool)
+                @foreach (explode(",",$about->tools) as $tool)
                     {{$tool}}
                 <em>/</em>
                 @endforeach
               </h3>
-            </div>
-            <div class="col-6">
+            </div> 
+             <div class="col-6">
               <h5 class="services_small">{{__('words.services')}}</h5>
               <h3 class="services_big">
-                 @foreach ($about->services as $service)
+                 @foreach (explode(",",$about->services) as $service)
                     {{$service}}
                 <em>/</em>
                 @endforeach
@@ -110,9 +109,9 @@
         <!-- ==========================    Experience start    ==========================  -->
         <section class="experience">
           <h5 class="experience_small">{{__('words.experience')}}</h5>
-          <h3 class="experience_big">{{$about->experince_title}}</h3>
+          <h3 class="experience_big">{{$about->experience_title}}</h3>
           <p class="experience_text">
-           {{$about->experince_des}}
+           {{$about->experience_des}}
           </p>
         </section>
         <!-- ==========================    Experience End    ==========================  -->

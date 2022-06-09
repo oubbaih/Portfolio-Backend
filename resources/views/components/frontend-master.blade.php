@@ -142,7 +142,7 @@
                                 <a class="nav-link" href="{{route('project.index')}}">{{__('words.projects')}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('about.index')}}">{{__('words.about_me')}}</a>
+                                <a class="nav-link" href="{{route('about.front')}}">{{__('words.about_me')}}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('contact.index')}}">{{__('words.contact')}}</a>

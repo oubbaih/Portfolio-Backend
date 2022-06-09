@@ -53,14 +53,14 @@
                                 <label for="exampleFormControlTextarea1">Tools</label>
                                 <input  @if ($key === 'ar')
                                     dir="rtl"
-                                @endif class="form-control"   value="{{$about->translate($key)->tools}}" name="{{$key}}[tools][]" id="exampleFormControlTextarea1" />
+                                @endif class="form-control"   value="{{$about->translate($key)->tools}}" name="{{$key}}[tools]" id="exampleFormControlTextarea1" />
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Services </label>
                                 <input   @if ($key === 'ar')
                                     dir="rtl"
                                 @endif  type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[services][]" value="{{$about->translate($key)->services}}">
+                                    name="{{$key}}[services]" value="{{$about->translate($key)->services}}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Experience Title </label>

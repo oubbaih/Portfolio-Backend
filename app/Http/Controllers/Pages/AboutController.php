@@ -16,6 +16,7 @@ class AboutController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -73,6 +74,7 @@ class AboutController extends Controller
     {
         //
         $about->update($request->except('_token', 'images'));
+        $about->save();
         return back();
     }
 

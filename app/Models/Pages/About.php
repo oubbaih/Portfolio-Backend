@@ -11,8 +11,8 @@ class About extends Model implements TranslatableContract
 {
     use Translatable;
     use HasFactory;
-    public $translatedAttributes = ['images'];
-    protected $fillable = ['present_title', 'present_des', 'tools', 'services', 'experience_title', 'experience_des'];
+    public $fillable = ['images'];
+    protected $translatedAttributes = ['present_title', 'present_des', 'tools', 'services', 'experience_title', 'experience_des'];
     protected $casts = [
         'tools' => 'array',
         'services' => 'array',

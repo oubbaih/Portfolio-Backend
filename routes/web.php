@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutFrontController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -21,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 // Route::post('/', Controller::class . '@store')->name('home.store');
 Route::get('/', Controller::class . '@index')->name('home');
-
+//About Page Route
+Route::get('/about', AboutFrontController::class . '@index')->name('about.front');
 
 
 Route::prefix('dashboard')->group(function () {
