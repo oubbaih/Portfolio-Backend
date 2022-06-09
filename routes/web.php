@@ -34,6 +34,7 @@ Route::prefix('dashboard')->group(function () {
     'about' => AboutController::class,
     'project' => ProjectController::class,
     'contact' => ContactController::class,
+    'about' => AboutController::class,
 
 
   ]);

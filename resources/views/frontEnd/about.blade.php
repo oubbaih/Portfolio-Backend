@@ -4,7 +4,7 @@
         <div class="loader show" id="loading">
       <div class="loader_icon"></div>
       <div class="loader_text">
-        <h5 class="loader_text-title">about me</h5>
+        <h5 class="loader_text-title">{{__('about_me')}}</h5>
         <p class="loader_text-des">full stack developer</p>
       </div>
     </div>
@@ -21,7 +21,7 @@
         <!-- ==========================    Mani Content Haeder Satrt    ==========================  -->
 
         <header class="about-header">
-          <h5 class="about-header_small">a few words about me</h5>
+          <h5 class="about-header_small">{{__('words.few_word')}}</h5>
           <h1 class="about-header_big">
             i'm lahcen oubbaih, a full stack developer who focuses on design and
             build app from back into front.
@@ -72,7 +72,7 @@
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">{{__('words.previous')}}</span>
           </button>
           <button
             class="carousel-control-next"
@@ -81,7 +81,7 @@
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">{{__('words.next')}}</span>
           </button>
         </div>
 
@@ -91,7 +91,7 @@
         <section class="services">
           <div class="row">
             <div class="col-6">
-              <h5 class="services_small">tools i use</h5>
+              <h5 class="services_small">{{__('words.tools')}}</h5>
               <h3 class="services_big">
                 photoshop
                 <em>/</em>
@@ -101,7 +101,7 @@
               </h3>
             </div>
             <div class="col-6">
-              <h5 class="services_small">full stack services</h5>
+              <h5 class="services_small">{{__('words.services')}}</h5>
               <h3 class="services_big">
                 web & mobile
                 <em>/</em>
@@ -115,7 +115,7 @@
         <!-- ==========================    Tools & Services End    ==========================  -->
         <!-- ==========================    Experience start    ==========================  -->
         <section class="experience">
-          <h5 class="experience_small">experience</h5>
+          <h5 class="experience_small">{{__('words.experience')}}</h5>
           <h3 class="experience_big">over 9 years of experince</h3>
           <p class="experience_text">
             I’ve been lucky enough to establish relationships with amazing
@@ -130,9 +130,9 @@
           <div class="container">
             <div class="row text-center">
               <div class="col-12">
-                <p class="work_alert">need a full stack developer?</p>
+                <p class="work_alert">{{__('words.need_a_full_stack_developer')}}</p>
                 <div class="work_link">
-                  <a class="h1" href="#">let's work together</a>
+                  <a class="h1" href="{{route('contact.index')}}">{{__('words.lets_work_together')}}</a>
                   <span>&#8594;</span>
                 </div>
               </div>
@@ -144,4 +144,4 @@
     </main>
 @endsection
     <!-- ==========================    Footer Start      ==========================  -->
-</x-frontend-master>
+</x-frontend-master> 

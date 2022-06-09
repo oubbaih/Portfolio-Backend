@@ -4,8 +4,8 @@
 	<div class="loader show" id="loading">
 		<div class="loader_icon"></div>
 		<div class="loader_text">
-			<h5 class="loader_text-title">welcome</h5>
-			<p class="loader_text-des">wait a bite ...</p>
+		  <h5 class="loader_text-title">{{__('words.casestudy')}}</h5>
+            <p class="loader_text-des">{{$project->casestudy}} ...</p>
 		</div>
 	</div>
 	@endsection
@@ -53,52 +53,32 @@
 					<div class="col-6">
 						<div class="case">
 							<div class="case-study">
-								<h5 class="portfolio_small">case study</h5>
-								<h3 class="portfolio_big">Symova — responsive website design</h3>
+								<h5 class="portfolio_small">{{__('words.casestudy')}}</h5>
+								<h3 class="portfolio_big">{{$project->casestudy}}</h3>
 							</div>
 							<div class="case-study">
-								<h5 class="portfolio_small">my role</h5>
+								<h5 class="portfolio_small">{{__('words.myrole')}}</h5>
 								<h3 class="portfolio_big">
-									Creative Direction UX / UI Website Design Icon Design
+									{{$project->myrole}}
 								</h3>
 							</div>
 							<div class="case-study">
-								<h5 class="portfolio_small">client</h5>
-								<h3 class="portfolio_big">Symova</h3>
+								<h5 class="portfolio_small">{{__('words.client')}}</h5>
+								<h3 class="portfolio_big">{{$project->client}}</h3>
 							</div>
 							<div class="case-study">
-								<h5 class="portfolio_small">year</h5>
-								<h3 class="portfolio_big">2020</h3>
+								<h5 class="portfolio_small">{{__('words.year')}}</h5>
+								<h3 class="portfolio_big">{{$project->year}}</h3>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-6">
 						<p class="portfolio_text">
-							Symova is a pension fund for medium and large companies in the
-							public transport and tourism sector in Switzerland.
-
-							They need a completely new design for their website, which would be
-							optimized for mobile devices and would support their updated
-							strategy with new features and modern technology. Together with
-							cloudtec AG, our goal was to establish a clear, friendly and
-							trustworthy brand presence.
-
-							The design needed to be simple, and
-							the navigation easy to understand to ensure that all the
-							information was easy to access for a large group of their
-							clients and employees.
-
-							After receiving some basic brand
-							guidelines (logo and colors), I had a free hand with my creative
-							process, with some good input from the client. The outcome was a
-							revitalized digital experience, focused on information
-							architecture, consistent typography and bright colors, with
-							references to their public transport and tourism roots. This
-							makes Symova distinctive and unique in their sector.
+							{{$project->description}}
 							<div>
-								<span class="portfolio_agency">Agency: </span>
-								<strong class="portfolio_name">cloudtec AG</strong>
+								<span class="portfolio_agency">{{__('words.agency')}}: </span>
+								<strong class="portfolio_name">{{$project->agencyname}}</strong>
 							</div>
 						</p>
 					</div>

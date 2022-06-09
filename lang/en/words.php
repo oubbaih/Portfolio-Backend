@@ -38,5 +38,24 @@ return [
   'latest_projects' => 'Latest projects',
   'availability_text' => ' I usually work on several projects but I’ll be happy to discuss new opportunities. Let’s get in touch!',
   'contact_text' => ' Feel free to reach out to me any time. I prefer to talk over email, especially since we may be a few time zones away.',
+  'email' => 'E-mail',
+  'phone' => 'Phone',
+  'fb' => 'facebook',
+  'yt' => 'youtube',
+  'tw' => 'twitter',
+  'casestudy' => 'case study',
+  'agency' => 'Agency',
+  'client' => 'client',
+  'myrole' => 'my role',
+  'about_me' => 'about me',
+  'few_word' => 'a few words about me',
+  'previous' => 'Previous',
+  'next' => 'next',
+  'tools' => 'tools i use',
+  'services' => 'services',
+  'experience' => 'experience',
+
+
+
 
 ];

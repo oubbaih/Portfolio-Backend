@@ -38,7 +38,23 @@ return [
   'latest_projects' => 'Dernier projets',
   'availability_text' => 'Je travaille habituellement sur plusieurs projets, mais je serai heureux de discuter de nouvelles opportunités. Prenons contact !',
   'contact_text' => 'N\'hésitez pas à me contacter à tout moment. Je préfère parler par e-mail, d\'autant plus que nous sommes peut-être éloignés de quelques fuseaux horaires.',
-
+  'email' => 'E-mail',
+  'phone' => 'téléphoner',
+  'fb' => 'facebook',
+  'yt' => 'youtube',
+  'tw' => 'twitter',
+  'casestudy' => 'étude de cas',
+  'agency' => 'Agence',
+  'year' => 'année',
+  'client' => 'cliente',
+  'myrole' => 'mon rôle',
+  'about_me' => 'à propos de moi',
+  'few_word' => 'quelques mots sur moi',
+  'previous' => 'Précédente',
+  'next' => 'suivante',
+  'tools' => 'outils que j\'utilise',
+  'services' => 'prestations de service',
+  'experience' => 'expérience',
 
 
 

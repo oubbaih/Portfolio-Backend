@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Pages\About;
 use App\Models\Project\Project;
 use App\Models\Settings\Setting;
 use Illuminate\Support\Facades\Schema;
@@ -29,10 +30,12 @@ class AppServiceProvider extends ServiceProvider
 
         if (Schema::hasTable('settings')) {
             $settings = Setting::CheckSettings();
+            // $about = About::CheckAboutPages();
             $projects = Project::all()->take(4);
             view()->share([
                 'setting' => $settings,
                 'projects' => $projects,
+                // 'about' => $about,
             ]);
         }
     }

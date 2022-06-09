@@ -108,7 +108,7 @@
     <!-- ==========================    NavBar Start    ==========================  -->
     <nav class="navbar fixed-top" id="navbar-id">
         <div class="container">
-            <a class="navbar-brand logo" href="#">
+            <a class="navbar-brand logo" href="/">
                 <img src="{{asset($setting->favicon)}}" alt="favicon" />
                 <img src="{{asset($setting->logo)}}" alt="logo" />
             </a>
@@ -125,10 +125,10 @@
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="container">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title menulogo" id="offcanvasNavbarLabel">
+                        <a class="offcanvas-title menulogo" id="offcanvasNavbarLabel" href="/">
                             <img src="{{asset($setting->favicon)}}" alt="favicon" />
                             <img src="{{asset($setting->logo)}}" alt="logo" />
-                        </h5>
+                        </a>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <!-- Menu Links  -->
@@ -182,32 +182,28 @@
                             <p class="footer_text">
                           {{__('words.contact_text')}}
                             </p>
-                            <span>E:{{$setting->email}} </span>
-                            <span>p:{{$setting->phone}} </span>
+                            <span>{{__('words.email')}}:{{$setting->email}} </span>
+                            <span>{{__('words.phone')}}:{{$setting->phone}} </span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <h5 class="footer_title">{{__('words.latest_projects')}} —</h5>
                     <ul class="nav flex-column">
+                        @foreach($projects as $project)
                         <li class="nav-item">
-                            <a class="nav-link" href="#">project</a>
+                            <a class="nav-link" href="{{route('project.show' , $project)}}">{{$project->casestudy}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">project2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">project3</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <h5 class="footer_title">{{__('words.follow_me_on')}} —</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a href="{{$setting->fb}}" class="nav-link">facebook</a>
-                            <a href="{{$setting->yt}}" class="nav-link">youtube</a>
-                            <a href="{{$setting->ftw}}" class="nav-link">twitter</a>
+                            <a href="{{$setting->fb}}" class="nav-link">{{__('words.fb')}}</a>
+                            <a href="{{$setting->yt}}" class="nav-link">{{__('words.yt')}}</a>
+                            <a href="{{$setting->ftw}}" class="nav-link">{{__('words.tw')}}</a>
                         </li>
                     </ul>
                 </div>

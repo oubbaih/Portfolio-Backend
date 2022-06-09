@@ -69,7 +69,7 @@
                                     {{$project->casestudy}}
                                 </h5>
                                 <a class="card-link"
-                                    href="/portfolio.html">{{__('words.view_case_study')}}<span>&#8594;</span>
+                                    href="{{route('project.show' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
                                     </a>
                                 </div>
                             </div>
