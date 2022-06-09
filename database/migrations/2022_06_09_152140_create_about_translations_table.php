@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('about_id')->unsigned();
             $table->string('locale')->index();
-            $table->string('present_title')->nullable();
+            $table->text('present_title')->nullable();
             $table->text('present_des')->nullable();
             $table->json('tools')->nullable();
             $table->json('services')->nullable();

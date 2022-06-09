@@ -5,7 +5,7 @@
       <div class="loader_icon"></div>
       <div class="loader_text">
         <h5 class="loader_text-title">{{__('about_me')}}</h5>
-        <p class="loader_text-des">full stack developer</p>
+        <p class="loader_text-des">{{$about->present_title}}</p>
       </div>
     </div>
     @endsection
@@ -23,14 +23,10 @@
         <header class="about-header">
           <h5 class="about-header_small">{{__('words.few_word')}}</h5>
           <h1 class="about-header_big">
-            i'm lahcen oubbaih, a full stack developer who focuses on design and
-            build app from back into front.
+           {{$about->present_title}}
           </h1>
           <p class="about-header_text">
-            Over the past 9 years I have been working with big companies and
-            rising startups around the world as a designer and art director,
-            working solo and leading small design teams. In my spare time I
-            enjoy photography and motorcycle adventures.
+           {{$about->present_des}}
           </p>
         </header>
         <!-- ==========================    Mani Content Haeder End    ==========================  -->
@@ -93,21 +89,19 @@
             <div class="col-6">
               <h5 class="services_small">{{__('words.tools')}}</h5>
               <h3 class="services_big">
-                photoshop
+                @foreach ($about->tools as $tool)
+                    {{$tool}}
                 <em>/</em>
-                illustrator
-                <em>/</em>
-                adobexd
+                @endforeach
               </h3>
             </div>
             <div class="col-6">
               <h5 class="services_small">{{__('words.services')}}</h5>
               <h3 class="services_big">
-                web & mobile
+                 @foreach ($about->services as $service)
+                    {{$service}}
                 <em>/</em>
-                illustrator
-                <em>/</em>
-                adobexd
+                @endforeach
               </h3>
             </div>
           </div>
@@ -116,12 +110,9 @@
         <!-- ==========================    Experience start    ==========================  -->
         <section class="experience">
           <h5 class="experience_small">{{__('words.experience')}}</h5>
-          <h3 class="experience_big">over 9 years of experince</h3>
+          <h3 class="experience_big">{{$about->experince_title}}</h3>
           <p class="experience_text">
-            I’ve been lucky enough to establish relationships with amazing
-            clients from all over the world, ranging from individual clients,
-            through up-and-coming startups, to multinational companies. For more
-            details, head over to my LinkedIn profile.
+           {{$about->experince_des}}
           </p>
         </section>
         <!-- ==========================    Experience End    ==========================  -->

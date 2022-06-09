@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pages\About;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -25,6 +26,7 @@ class AboutController extends Controller
     public function create()
     {
         //
+        return view('Dashboard.About.index');
     }
 
     /**
@@ -67,9 +69,11 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, About $about)
     {
         //
+        $about->update($request->except('_token', 'images'));
+        return back();
     }
 
     /**

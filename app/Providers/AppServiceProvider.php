@@ -30,12 +30,12 @@ class AppServiceProvider extends ServiceProvider
 
         if (Schema::hasTable('settings')) {
             $settings = Setting::CheckSettings();
-            // $about = About::CheckAboutPages();
+            $about = About::CheckAboutPages();
             $projects = Project::all()->take(4);
             view()->share([
                 'setting' => $settings,
                 'projects' => $projects,
-                // 'about' => $about,
+                'about' => $about,
             ]);
         }
     }

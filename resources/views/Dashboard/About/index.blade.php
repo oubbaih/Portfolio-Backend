@@ -1,5 +1,4 @@
-<x-dashboard-master>
-  @section('main')
+
       <x-dashboard-master>
     @section('main')
     <div class="container-fluid">
@@ -40,41 +39,43 @@
                                 <input   @if ($key === 'ar')
                                     dir="rtl"
                                 @endif   type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[present]" value="{{$setting->translate($key)->present }}">
+                                    name="{{$key}}[present_title]" value="{{$about->translate($key)->present_title }}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Present Description  </label>
-                                <input  @if ($key === 'ar')
+                                <textarea  @if ($key === 'ar')
                                     dir="rtl"
                                 @endif type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[present_des]" value="{{$setting->translate($key)->present_des }}">
+                                    name="{{$key}}[present_des]" >{{$about->translate($key)->present_des }}
+                                </textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Tools</label>
-                                <textarea  @if ($key === 'ar')
+                                <input  @if ($key === 'ar')
                                     dir="rtl"
-                                @endif class="form-control"  name="{{$key}}[tools]" id="exampleFormControlTextarea1" rows="3">{{$setting->translate($key)->tools}}</textarea>
+                                @endif class="form-control"   value="{{$about->translate($key)->tools}}" name="{{$key}}[tools][]" id="exampleFormControlTextarea1" />
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Services </label>
                                 <input   @if ($key === 'ar')
                                     dir="rtl"
                                 @endif  type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[services]" value="{{$setting->translate($key)->services}}">
+                                    name="{{$key}}[services][]" value="{{$about->translate($key)->services}}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Experience Title </label>
                                 <input   @if ($key === 'ar')
                                     dir="rtl"
                                 @endif  type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[experience_title]" value="{{$setting->translate($key)->experience_title}}">
+                                    name="{{$key}}[experience_title]" value="{{$about->translate($key)->experience_title}}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword5">Experience Description </label>
-                                <input   @if ($key === 'ar')
+                                <textarea   @if ($key === 'ar')
                                     dir="rtl"
                                 @endif  type="text" id="inputtext" class="form-control" aria-describedby="textHelpBlock"
-                                    name="{{$key}}[experience_des]" value="{{$setting->translate($key)->experience_des}}">
+                                    name="{{$key}}[experience_des]" >{{$about->translate($key)->experience_des}}
+                                  </textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Update</button>
@@ -91,5 +92,3 @@
     @endsection
 </x-dashboard-master>
 
-  @endsection
-</x-dashboard-master>

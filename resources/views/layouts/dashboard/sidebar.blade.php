@@ -44,6 +44,20 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"
+                            ><i class="icon-puzzle"></i>Pages</a
+                        >
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="{{route('about.create')}}"
+                                    ><i class="icon-puzzle"></i> About </a
+                                >
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
