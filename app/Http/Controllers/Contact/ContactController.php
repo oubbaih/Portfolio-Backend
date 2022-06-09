@@ -3,10 +3,36 @@
 namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact\Contact;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class ContactController extends Controller
 {
+
+
+
+    public function getContactLists()
+    {
+        $data = Contact::select('*');
+        return Datatables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $actionBtn = '<a href="' . Route('project.edit', $row) . '" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                return $actionBtn;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+    }
+
+
+    public function front()
+    {
+        return view('frontEnd.contact');
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +41,7 @@ class ContactController extends Controller
     public function index()
     {
         //
-        return view('frontEnd.contact');
+        return view('Dashboard.Contact.index');
     }
 
     /**
@@ -37,6 +63,9 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        Contact::create($request->except('_token'));
+        return back();
     }
 
     /**

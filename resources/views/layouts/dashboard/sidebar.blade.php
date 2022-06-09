@@ -56,6 +56,13 @@
                                     ><i class="icon-puzzle"></i> About </a
                                 >
                             </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="{{route('contact.index')}}"
+                                    ><i class="icon-puzzle"></i> Contact </a
+                                >
+                            </li>
                         </ul>
                     </li>
                 </ul>

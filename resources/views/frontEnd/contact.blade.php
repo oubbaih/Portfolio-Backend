@@ -90,10 +90,10 @@
 
                     >
                       <option selected>{{__('words.what_are_you_intersted_in')}}</option>
-                      <option value="1">{{__('words.op1')}}</option>
-                      <option value="2">{{__('words.op2')}}</option>
-                      <option value="3">{{__('words.op3')}}</option>
-                      <option value="4">{{__('words.op4')}}</option>
+                      <option value="{{__('words.op1')}}">{{__('words.op1')}}</option>
+                      <option value="{{__('words.op2')}}">{{__('words.op2')}}</option>
+                      <option value="{{__('words.op3')}}">{{__('words.op3')}}</option>
+                      <option value="{{__('words.op4')}}">{{__('words.op4')}}</option>
                     </select>
                   </div>
                   <div class="col">
@@ -105,10 +105,10 @@
 
                     >
                       <option selected>{{__('words.whats_your_budget')}}</option>
-                      <option value="1">$1000 - $2500</option>
-                      <option value="2">$2500 - $5000</option>
-                      <option value="3">$5000 - $10000</option>
-                      <option value="4">$10000 {{__('words.more')}}</option>
+                      <option value="$1000 - $2500">$1000 - $2500</option>
+                      <option value="$2500 - $5000">$2500 - $5000</option>
+                      <option value="$5000 - $10000">$5000 - $10000</option>
+                      <option value="$10000">$10000 {{__('words.more')}}</option>
                     </select>
                   </div>
                   <label class="form-label" for="inputEmail">{{__('words.whats_your_message')}}</label>

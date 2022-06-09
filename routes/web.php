@@ -24,8 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Controller::class . '@index')->name('home');
 //About Page Route
 Route::get('/about', AboutFrontController::class . '@index')->name('about.front');
-
-
+// contact form view
+Route::get('/contact', ContactController::class . '@front')->name('contact.front');
+Route::get('contact/list', ContactController::class . '@getContactLists')->name('contact.list');
 Route::prefix('dashboard')->group(function () {
   Route::get('/', DashboardController::class . '@index')->name('dashboard');
   //Projects Additional Routes 

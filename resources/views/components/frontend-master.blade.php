@@ -88,7 +88,7 @@
 
     <!-- ==========================    Contact Icon Start    ==========================  -->
     <div class="contact">
-        <a class="contact_icon" href="#">
+        <a class="contact_icon" href="{{route('contact.front')}}">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
                 viewBox="0 0 16 16">
                 <path
@@ -139,7 +139,7 @@
                                 <a class="nav-link" href="{{route('about.front')}}">{{__('words.about_me')}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('contact.index')}}">{{__('words.contact')}}</a>
+                                <a class="nav-link" href="{{route('contact.front')}}">{{__('words.contact')}}</a>
                             </li>
                         </ul>
                     </div>
