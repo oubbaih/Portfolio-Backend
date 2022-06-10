@@ -47,20 +47,30 @@
                 transform: translate(50%, -50%);
             }
         }
+
         @media only screen and (max-width: 767px) {
             .footer {
                 text-align: center;
             }
-            .footer_title{
+
+            .footer_title {
                 margin-top: 2rem;
             }
         }
-        .case-study .card-link , .work_alert ,  .case-study_project, .contact-section_small{
+
+        .case-study .card-link,
+        .work_alert,
+        .case-study_project,
+        .contact-section_small {
             letter-spacing: 0px;
         }
-        .about-header_small ,.services_small,.experience_small{
+
+        .about-header_small,
+        .services_small,
+        .experience_small {
             letter-spacing: 0
         }
+
     </style>
     @endif
 
@@ -108,7 +118,7 @@
             </a>
             <button class="navbar-toggler menu" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-               {{__('words.menu')}}
+                {{__('words.menu')}}
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-text-paragraph" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -130,7 +140,8 @@
                         <ul
                             class="navbar-nav justify-content-end flex-grow-1 p-4 align-items-center align-content-center">
                             <li class="nav-item">
-                                <span class="text-uppercase" style="font-size: 18px; color: #8b8e93">{{__('words.menu')}}</span>
+                                <span class="text-uppercase"
+                                    style="font-size: 18px; color: #8b8e93">{{__('words.menu')}}</span>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('project.index')}}">{{__('words.projects')}}</a>
@@ -174,7 +185,7 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <p class="footer_text">
-                          {{__('words.contact_text')}}
+                                {{__('words.contact_text')}}
                             </p>
                             <span>{{__('words.email')}}:{{$setting->email}} </span>
                             <span>{{__('words.phone')}}:{{$setting->phone}} </span>
@@ -206,9 +217,20 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <p class="footer_text">
-                               {{__('words.availability_text')}}
+                                {{__('words.availability_text')}}
                             </p>
                         </li>
+                    </ul>
+                    <h5 class="footer_title">{{__('words.languages')}} —</h5>
+                    <ul class="nav flex-column">
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="nav-item">
+                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" class="footer_text nav-link">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -222,7 +244,8 @@
             <p>
                 &copy;
                 <script>
-                 document.write(new Date().getFullYear());
+                    document.write(new Date().getFullYear());
+
                 </script>
                 {!! $setting->copyright !!}
             </p>

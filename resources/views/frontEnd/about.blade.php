@@ -79,7 +79,7 @@
             <div class="col-6">
               <h5 class="services_small">{{__('words.tools')}}</h5>
               <h3 class="services_big">
-                @foreach (explode(",",$about->tools) as $tool)
+                @foreach (explode(" ",$about->tools) as $tool)
                     {{$tool}}
                 <em>/</em>
                 @endforeach
@@ -88,7 +88,7 @@
              <div class="col-6">
               <h5 class="services_small">{{__('words.services')}}</h5>
               <h3 class="services_big">
-                 @foreach (explode(",",$about->services) as $service)
+                    @foreach (explode(" ",$about->services) as $service)
                     {{$service}}
                 <em>/</em>
                 @endforeach
@@ -113,7 +113,7 @@
               <div class="col-12">
                 <p class="work_alert">{{__('words.need_a_full_stack_developer')}}</p>
                 <div class="work_link">
-                  <a class="h1" href="{{route('contact.index')}}">{{__('words.lets_work_together')}}</a>
+                  <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a>
                   <span>&#8594;</span>
                 </div>
               </div>

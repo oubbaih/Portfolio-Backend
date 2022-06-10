@@ -55,6 +55,7 @@ return [
   'op3' => 'veux m\'embaucher à plein temps',
   'op4' => 'je voulais juste dire bonjour!',
   'more' => "ou plus",
+  'languages' => 'langues',
 
 
 

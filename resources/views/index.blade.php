@@ -88,7 +88,7 @@
                     <div class="col-12">
                         <p class="work_alert">{{__('words.need_a_full_stack_developer')}}</p>
                         <div class="work_link">
-                            <a class="h1" href="{{route('contact.index')}}">{{__('words.lets_work_together')}}</a>
+                            <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a>
                             <span>&#8594;</span>
                         </div>
                     </div>

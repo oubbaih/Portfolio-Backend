@@ -12,11 +12,11 @@
 
 // Loading animation
 
-let LoadinElemt = document.getElementById('loading');
+let LoadinElemt = document.getElementById("loading");
 
-window.addEventListener('load', function () {
-  this.setTimeout(() => {
-    LoadinElemt.classList.remove('show');
-    LoadinElemt.classList.add('hide');
-  }, 1000);
+window.addEventListener("load", function () {
+    this.setTimeout(() => {
+        LoadinElemt.classList.remove("show");
+        LoadinElemt.classList.add("hide");
+    });
 });
