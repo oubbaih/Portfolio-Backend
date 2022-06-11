@@ -63,6 +63,8 @@ return [
   'remember_me' => 'تذكرنى',
   'forgot_your_password' => 'نسيت رقمك السري؟',
   'dashboard' => 'لوحة التحكم الرئيسية',
+  'portfolio' => 'مَلَفّ',
+  'cv' => 'تنزيل سيرتي الذاتية',
 
 
 

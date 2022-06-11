@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('favicon')->nullable();
             $table->string('logo')->nullable();
             $table->string('persnalImage')->nullable();
+            $table->string('avatar')->nullable();
             $table->string('bgImage')->nullable();
+            $table->string('cv')->nullable();
             $table->string('fb')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();

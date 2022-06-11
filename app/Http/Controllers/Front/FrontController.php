@@ -13,4 +13,9 @@ class FrontController extends Controller
     {
         return view('frontEnd.single-project', compact('project'));
     }
+    public function front()
+    {
+        $projects = Project::all();
+        return view('frontEnd.projects', compact('projects'));
+    }
 }

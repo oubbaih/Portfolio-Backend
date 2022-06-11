@@ -36,7 +36,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
-                        <img src="img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com" />
+                        <img src="{{asset($setting->avatar)}}" class="img-avatar" alt="{{$setting->fullname}}" />
                         <span class="hidden-md-down">admin</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">

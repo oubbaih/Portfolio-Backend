@@ -1,4 +1,10 @@
 <x-frontend-master>
+ @section('seo')
+            <title>{{__('words.portfolio')}} |{{\Illuminate\Support\Str::limit($about->present_title,40)}}</title>
+    <link rel="canonical" href="{{env('APP_URL')}}" />
+	<meta name="description" content="{{\Illuminate\Support\Str::limit($about->present_des,100)}}">
+    @endsection
+
     <!-- ==========================    Loader  Start    ==========================  -->
     @section('load')
         <div class="loader show" id="loading">
@@ -27,7 +33,14 @@
           <p class="about-header_text">
            {{$about->present_des}}
           </p>
+               <!-- ==========================   CV Download Link Start    ==========================  -->
+               <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="/download" class="  mt-5 btn btn-secondary btn-lg ">{{__('words.cv')}}</a>
+               </div>
+        <!-- ==========================    CV Download Link End      ==========================  -->
         </header>
+
+   
         <!-- ==========================    Mani Content Haeder End    ==========================  -->
 
         <!-- ==========================    Mani Content Slider Satrt    ==========================  -->

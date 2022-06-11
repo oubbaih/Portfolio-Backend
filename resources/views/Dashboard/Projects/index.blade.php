@@ -26,6 +26,26 @@
                     <tbody>
                     </tbody>
                 </table>
+
+                {{-- Model Setup  --}}
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="{{route('project.delete')}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="id_use" id="id-name">
+                                <p style="padding:2rem; text-align:center; font-size:2rem; text-transform:capitalize;">
+                                    Are You Sure Want To Delete User</p>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 @endsection
                 @section('scripts')
                 <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
@@ -75,6 +95,14 @@
                         });
 
                     });
+
+                    function clickFinc() {
+                        let element = document.getElementById('deleteBtn');
+                        let id = element.getAttribute('data-id');
+                        let inputHiddenId = document.getElementById('id-name');
+                        inputHiddenId.value = id;
+
+                    }
 
                 </script>
                 @endsection

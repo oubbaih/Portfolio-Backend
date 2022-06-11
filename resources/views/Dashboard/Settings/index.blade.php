@@ -26,11 +26,21 @@
                         <label for="faviconid" class="form-label">Personal Image</label>
                         <input type="file" name="persnalImage" class="form-control-file">
                     </div>
+                    <img src="{{asset($setting->avatar)}}" class="setting-img" alt="">
+
+                    <div class="form-group">
+                        <label for="faviconid" class="form-label">Avatar Image</label>
+                        <input type="file" name="avatar" class="form-control-file">
+                    </div>
                     <img src="{{asset($setting->bgImage)}}" class="setting-img" alt="">
 
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Background Image</label>
                         <input type="file" name="bgImage" class="form-control-file">
+                    </div>
+                    <div class="form-group">
+                        <label for="faviconid" class="form-label">Cv PDF</label>
+                        <input type="file" name="cv" class="form-control-file">
                     </div>
                     <hr>
                     <label class="form-label" >Social Media </label>

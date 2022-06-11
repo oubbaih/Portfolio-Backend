@@ -1,4 +1,9 @@
 <x-frontend-master>
+    @section('seo')
+            <title>{{__('words.portfolio')}} | {{$setting->fullname}}</title>
+    <link rel="canonical" href="{{env('APP_URL')}}" />
+	<meta name="description" content="{{$setting->description}}">
+    @endsection
     @section('load')
     <div class="loader show" id="loading">
         <div class="loader_icon"></div>

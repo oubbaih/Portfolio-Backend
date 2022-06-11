@@ -63,7 +63,8 @@ return [
   'remember_me' => 'Souviens-toi de moi',
   'forgot_your_password' => 'Mot de passe oublié?',
   'dashboard' => 'tableau de bord',
-
+  'portfolio' => 'portefeuille',
+  'cv' => 'Télécharger mon CV',
 
 
 

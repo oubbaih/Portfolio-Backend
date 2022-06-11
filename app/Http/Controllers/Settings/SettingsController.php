@@ -93,11 +93,23 @@ class SettingsController extends Controller
             $path = $this->ImageImport($request, 'persnalImage');
             $setting->persnalImage = $path;
         }
+        if ($request->file('avatar')) {
+            $this->UnlinkImage($setting->avatar);
+
+            $path = $this->ImageImport($request, 'avatar');
+            $setting->avatar = $path;
+        }
         if ($request->file('bgImage')) {
             $this->UnlinkImage($setting->bgImage);
 
             $path = $this->ImageImport($request, 'bgImage');
             $setting->bgImage = $path;
+        }
+        if ($request->file('cv')) {
+            $this->UnlinkImage($setting->cv);
+
+            $path = $this->ImageImport($request, 'cv');
+            $setting->cv = $path;
         }
         $setting->save();
         return back();
@@ -125,7 +137,6 @@ class SettingsController extends Controller
     function UnlinkImage($image_path)
     {
         if (File::exists($image_path)) {
-            //File::delete($image_path);
             unlink($image_path);
         }
     }

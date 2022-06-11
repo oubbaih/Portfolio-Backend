@@ -1,4 +1,9 @@
 <x-frontend-master>
+    @section('seo')
+    <title>{{__('words.portfolio')}} | Projects List</title>
+    <link rel="canonical" href="{{env('APP_URL')}}" />
+    <meta name="description" content="show all projects">
+    @endsection
     @section('main')
     <div class="main" style="margin-top: 8rem;">
         <!-- ==========================    Case Studies  Section Start     ==========================  -->

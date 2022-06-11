@@ -62,4 +62,7 @@ return [
   'remember_me' => 'Remember Me',
   'forgot_your_password' => 'Forgot Your Password?',
   'dashboard' => 'dashboard',
+  'portfolio' => 'portfolio',
+  'year' => 'year',
+  'cv' => 'Download My Resume',
 ];

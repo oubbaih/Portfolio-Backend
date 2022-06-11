@@ -1,5 +1,9 @@
 <x-frontend-master>
-
+ @section('seo')
+            <title>{{__('words.portfolio')}} | {{__('words.contact')}}</title>
+    <link rel="canonical" href="{{env('APP_URL')}}" />
+	<meta name="description" content="{{\Illuminate\Support\Str::limit($about->present_des,100)}}">
+    @endsection
 <!-- ==========================    Loader  Start    ==========================  -->
   @section('load')
           <div class="loader show" id="loading">

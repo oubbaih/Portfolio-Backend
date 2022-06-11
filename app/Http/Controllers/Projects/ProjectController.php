@@ -25,19 +25,42 @@ class ProjectController extends Controller
         return Datatables::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
-                $actionBtn = '<a href="' . Route('project.edit', $row) . '" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                $actionBtn = '<a href="' . Route('project.edit', $row) . '" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)"  data-toggle="modal" data-target="#staticBackdrop"  id="deleteBtn" data-id="' . $row->id . '" onClick="clickFinc()" class="delete btn btn-danger btn-sm">Delete</a>';
                 return $actionBtn;
             })
             ->rawColumns(['action'])
             ->make(true);
     }
 
+    public function delete(Request $request)
+    {
+        $request->validate([
+            'id_use' => 'required|numeric'
+        ]);
+
+        if (is_numeric($request->id_use)) {
+            $project = Project::where('id', $request->id_use)->first();
+            if (file_exists(public_path() . '/'  . $project->featureImage) && $project->featureImage != null) {
+                unlink(public_path() . '/'  . $project->featureImage);
+            }
+
+            if (!$project->filename == null) {
+                foreach ($project->filename as $file) {
+                    if (file_exists(public_path() . '/'  . $file) && $file != null) {
+                        unlink(public_path() . '/'  . $file);
+                    }
+                }
+            }
+
+            $project->delete();
+        }
+        return back();
+    }
 
     public function index()
     {
         //
-        $projects = Project::all();
-        return view('frontEnd.projects', compact('projects'));
+        return view('Dashboard.Projects.index');
     }
 
     /**
@@ -99,7 +122,7 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         //
-
+        return view('frontEnd.single-project', compact('project'));
     }
 
     /**

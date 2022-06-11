@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/gif/png/svg" href="{{$setting->favicon}}" />
     <link rel="stylesheet" href="{{asset('css/style-front.css')}}" />
-    <title>Portfolio | Lahcen Oubbaih</title>
+    @yield('seo')
+    <meta name="robots" content="noindex, nofollow" />
     <style>
         @font-face {
             font-family: 'Helvetica Now Display DW';
@@ -148,7 +149,7 @@
                                     style="font-size: 18px; color: #8b8e93">{{__('words.menu')}}</span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('project.index')}}">{{__('words.projects')}}</a>
+                                <a class="nav-link" href="{{route('project.front')}}">{{__('words.projects')}}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('about.front')}}">{{__('words.about_me')}}</a>
@@ -157,11 +158,21 @@
                                 <a class="nav-link" href="{{route('contact.front')}}">{{__('words.contact')}}</a>
                             </li>
                             @if (Auth()->user())
-                                 <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{route('dashboard')}}">{{__('words.dashboard')}}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                            </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
                             @endif
-                           
+
                         </ul>
                     </div>
                     <!-- End Menu Links  -->
@@ -200,7 +211,7 @@
                             <span>{{__('words.email')}}:{{$setting->email}} </span>
                             <span>{{__('words.phone')}}:{{$setting->phone}} </span>
                         </li>
-                        <a class="nav-link" href="login">
+                        <a class="nav-link" href="/login">
                             {{__('words.login')}}
                         </a>
                     </ul>

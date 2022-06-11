@@ -13,7 +13,7 @@ class Setting extends Model implements TranslatableContract
     use Translatable;
     use HasFactory;
     public $translatedAttributes = ['fullname', 'jobTitle', 'copyright', 'description', 'address'];
-    protected $fillable = ['author', 'favicon', 'logo', 'bgImage', 'personalImage', 'email', 'phone', 'fb', 'tw', 'ink', 'yt', 'lk', 'tk'];
+    protected $fillable = ['author', 'cv', 'avatar', 'favicon', 'logo', 'bgImage', 'personalImage', 'email', 'phone', 'fb', 'tw', 'ink', 'yt', 'lk', 'tk'];
 
     public static function CheckSettings()
     {
