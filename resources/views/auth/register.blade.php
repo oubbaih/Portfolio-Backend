@@ -1,6 +1,7 @@
 <x-frontend-master>
 
 @section('main')
+@if ($count === 0)
 <div class="container" style="margin-top:10rem;">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,5 +75,8 @@
         </div>
     </div>
 </div>
+@endif
+
+<h1 style="margin-top: 8rem; text-align:center;" class="text-grey display-1">Page Not Found</h1>
 @endsection
 </x-frontend-master>

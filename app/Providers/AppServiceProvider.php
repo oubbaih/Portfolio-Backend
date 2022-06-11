@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Pages\About;
 use App\Models\Project\Project;
 use App\Models\Settings\Setting;
+use App\Models\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,10 +33,12 @@ class AppServiceProvider extends ServiceProvider
             $settings = Setting::CheckSettings();
             $about = About::CheckAboutPages();
             $projects = Project::all()->take(4);
+            $users = User::all()->count();
             view()->share([
                 'setting' => $settings,
                 'projects' => $projects,
                 'about' => $about,
+                'count' => $users,
             ]);
         }
     }

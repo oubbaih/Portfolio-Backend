@@ -9,6 +9,7 @@ use App\Http\Controllers\Pages\AboutController;
 use App\Http\Controllers\Projects\ProjectController;
 use App\Http\Controllers\Settings\SettingsController;
 use App\Models\Project\Project;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
