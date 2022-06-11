@@ -156,6 +156,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('contact.front')}}">{{__('words.contact')}}</a>
                             </li>
+                            @if (Auth()->user())
+                                 <li class="nav-item">
+                                <a class="nav-link" href="{{route('dashboard')}}">{{__('words.dashboard')}}</a>
+                            </li>
+                            @endif
+                           
                         </ul>
                     </div>
                     <!-- End Menu Links  -->

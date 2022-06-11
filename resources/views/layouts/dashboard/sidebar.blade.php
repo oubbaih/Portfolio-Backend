@@ -2,7 +2,7 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"
+                        <a class="nav-link" href="{{route('dashboard')}}"
                             ><i class="icon-speedometer"></i> Dashboard
                             <span class="tag tag-info">NEW</span></a
                         >

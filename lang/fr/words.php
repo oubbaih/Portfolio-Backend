@@ -56,7 +56,13 @@ return [
   'op4' => 'je voulais juste dire bonjour!',
   'more' => "ou plus",
   'languages' => 'langues',
-  'login' => 'connexion'
+  'login' => 'connexion',
+  'logout' => 'Se déconnecter',
+  'email_address' => 'Adresse e-mail',
+  'password' => 'Mot de passe',
+  'remember_me' => 'Souviens-toi de moi',
+  'forgot_your_password' => 'Mot de passe oublié?',
+  'dashboard' => 'tableau de bord',
 
 
 

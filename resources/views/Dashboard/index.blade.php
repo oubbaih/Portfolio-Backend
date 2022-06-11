@@ -18,10 +18,10 @@
                         <a class="btn btn-secondary" href="#"
                             ><i class="icon-speech"></i
                         ></a>
-                        <a class="btn btn-secondary" href="./"
-                            ><i class="icon-graph"></i> &nbsp;Dashboard</a
+                        <a class="btn btn-secondary" href="{{route('home')}}"
+                            ><i class="icon-graph"></i> &nbsp;Home Page</a
                         >
-                        <a class="btn btn-secondary" href="#"
+                        <a class="btn btn-secondary" href="{{route('setting.index')}}"
                             ><i class="icon-settings"></i> &nbsp;Settings</a
                         >
                     </div>

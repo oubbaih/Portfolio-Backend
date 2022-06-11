@@ -55,7 +55,11 @@ return [
   'op4' => 'just wanted to say hi!',
   'more' => "or more",
   'languages' => 'languages',
-  'login' => 'login'
-
-
+  'login' => 'login',
+  'logout' => 'Logout',
+  'email_address' => 'Email Address',
+  'password' => 'Password',
+  'remember_me' => 'Remember Me',
+  'forgot_your_password' => 'Forgot Your Password?',
+  'dashboard' => 'dashboard',
 ];
