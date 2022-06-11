@@ -79,6 +79,10 @@
 </head>
 
 <body>
+
+
+
+
     <!-- ==========================    Loader  Start    ==========================  -->
     @yield('load')
     <!-- ==========================    Loader End    ==========================  -->
@@ -190,6 +194,9 @@
                             <span>{{__('words.email')}}:{{$setting->email}} </span>
                             <span>{{__('words.phone')}}:{{$setting->phone}} </span>
                         </li>
+                        <a class="nav-link" href="login">
+                            {{__('words.login')}}
+                        </a>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
@@ -226,16 +233,20 @@
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li class="nav-item">
                             <a rel="alternate" hreflang="{{ $localeCode }}"
-                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" class="footer_text nav-link">
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                                class="footer_text nav-link">
                                 {{ $properties['native'] }}
                             </a>
                         </li>
                         @endforeach
+
+
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
     <!-- ==========================    Footer End      ==========================  -->
 
     <!-- ==========================    CopyRight Start      ==========================  -->

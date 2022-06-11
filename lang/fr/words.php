@@ -56,6 +56,7 @@ return [
   'op4' => 'je voulais juste dire bonjour!',
   'more' => "ou plus",
   'languages' => 'langues',
+  'login' => 'connexion'
 
 
 

@@ -20,3 +20,7 @@ window.addEventListener("load", function () {
         LoadinElemt.classList.add("hide");
     });
 });
+
+let btn = document.getElementById("loginid");
+
+btn.addEventListener("click", function (e) {});

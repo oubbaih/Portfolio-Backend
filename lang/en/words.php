@@ -55,6 +55,7 @@ return [
   'op4' => 'just wanted to say hi!',
   'more' => "or more",
   'languages' => 'languages',
+  'login' => 'login'
 
 
 ];

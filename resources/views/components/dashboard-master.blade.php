@@ -79,7 +79,22 @@
                                 class="tag tag-primary">42</span></a>
                         <div class="divider"></div>
                         <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+                        
+                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                     <i class="fa fa-lock"></i>    {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                        @method('DELETE');
+                                    </form>
+                                </div>
+
+
+
                     </div>
                 </li>
                 {{-- <li class="nav-item">

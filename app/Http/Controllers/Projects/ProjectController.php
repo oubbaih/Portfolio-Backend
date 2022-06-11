@@ -99,7 +99,7 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         //
-        return view('frontEnd.single-project', compact('project'));
+
     }
 
     /**
