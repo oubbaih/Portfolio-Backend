@@ -109,6 +109,8 @@
 
                     >
                       <option selected>{{__('words.whats_your_budget')}}</option>
+                      <option value="$1000 - $2500">$0 - $500</option>
+                      <option value="$1000 - $2500">$500 - $1000</option>
                       <option value="$1000 - $2500">$1000 - $2500</option>
                       <option value="$2500 - $5000">$2500 - $5000</option>
                       <option value="$5000 - $10000">$5000 - $10000</option>

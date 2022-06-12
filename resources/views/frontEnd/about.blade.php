@@ -38,7 +38,8 @@
                 <a href="/download" class="  mt-5 btn btn-secondary btn-lg ">{{__('words.cv')}}</a>
                </div>
         <!-- ==========================    CV Download Link End      ==========================  -->
-        </header>
+      
+      </header>
 
    
         <!-- ==========================    Mani Content Haeder End    ==========================  -->
