@@ -52,6 +52,8 @@
           data-bs-ride="carousel"
         >
           <div class="carousel-inner">
+            @if ($about->images != null)
+                
             @foreach ($about->images as $image)
                 <div class="carousel-item @if ($loop->index === 0)
                     active
@@ -63,7 +65,7 @@
               />
             </div>
             @endforeach
-            
+            @endif
           </div>
           <button
             class="carousel-control-prev"
