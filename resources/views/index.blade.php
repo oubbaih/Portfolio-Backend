@@ -10,6 +10,7 @@
     @section('load')
     <div class="loader show" id="loading">
         <div class="loader_icon"></div>
+
         <div class="loader_text">
             <h5 class="loader_text-title">{{__('words.welcome')}}</h5>
             <p class="loader_text-des">{{__('words.wait_a_bit')}}</p>
