@@ -1,8 +1,11 @@
 <x-frontend-master>
     @section('seo')
-            <title>{{__('words.portfolio')}} | {{$setting->fullname}}</title>
+    <title>{{__('words.portfolio')}} | {{$setting->fullname}}</title>
     <link rel="canonical" href="{{env('APP_URL')}}" />
-	<meta name="description" content="{{$setting->description}}">
+    <meta name="description" content="{{$setting->description}}">
+    @endsection
+    @section('styles')
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @endsection
     @section('load')
     <div class="loader show" id="loading">
@@ -21,22 +24,26 @@
                 <img src="{{asset($setting->bgImage)}}" class="header_logo-img" alt="header logo" />
             </div>
             <div class="row">
-                <div class="col-4 header_personal d-md-block">
-                    <img src="{{asset($setting->persnalImage)}}" class="header-personal-img" alt="personal image" />
+                <div data-aos="fade-left">
+                    <div class="col-4 header_personal d-md-block">
+                        <img src="{{asset($setting->persnalImage)}}" class="header-personal-img" alt="personal image" />
+                    </div>
                 </div>
-                <div class="col-lg-7 col-md-6 header_content">
-                    <div class="space">
-                        <h5 class="header_content-user">{{$setting->fullname}}</h5>
-                        <h1 class="header_content-job h1"> {{$setting->jobTitle}}</h1>
-                        <div class="header_content-wrap">
-                            <p class="header_content-wrap-info">
-                                {{$setting->description}}
-                            </p>
-                        </div>
-                        <div>
-                            <a href="#" class="header_content-links m-2">{{__('words.view_project')}}</a>
-                            {{__('words.or')}}
-                            <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
+                <div data-aos="fade-right">
+                    <div class="col-lg-7 col-md-6 header_content">
+                        <div class="space">
+                            <h5 class="header_content-user">{{$setting->fullname}}</h5>
+                            <h1 class="header_content-job h1"> {{$setting->jobTitle}}</h1>
+                            <div class="header_content-wrap">
+                                <p class="header_content-wrap-info">
+                                    {{$setting->description}}
+                                </p>
+                            </div>
+                            <div>
+                                <a href="#" class="header_content-links m-2">{{__('words.view_project')}}</a>
+                                {{__('words.or')}}
+                                <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,31 +63,40 @@
     <!-- ==========================    Main Content Start     ==========================  -->
     @section('main')
     <div class="main">
+        <div>
+        </div>
         <!-- ==========================    Case Studies  Section Start     ==========================  -->
 
         <section id="case-study" class="case-study">
             <div class="container">
-                <h5 class="case-study_project">{{__('words.selected_projects')}}</h5>
-                <h1 class="case-study_title">{{__('words.case_studies')}}</h1>
+                <div data-aos="fade-right">
+                    <h5 class="case-study_project">{{__('words.selected_projects')}}</h5>
+                </div>
+                <div data-aos="fade-left">
+                    <h1 class="case-study_title">{{__('words.case_studies')}}</h1>
+                </div>
                 <div class="row mt-5">
                     @foreach ($projects as $project)
-                        <div class="col-md-6 col-sm-12 mb-4">
-                        <div class="card bg-dark text-white">
-                            <img src="{{asset($project->featureImage)}}"
-                                class="card-img" alt=" {{$project->casestudy}}" />
-                            <div class="card-img-overlay">
-                                <p class="card-text">{{$project->year}}</p>
-                                <h5 class="card-title">
-                                    {{$project->casestudy}}
-                                </h5>
-                                <a class="card-link"
-                                    href="{{route('project.view' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
+
+                    <div class="col-md-6 col-sm-12 mb-4">
+                        <div data-aos="fade-right">
+                            <div class="card bg-dark text-white">
+                                <img src="{{asset($project->featureImage)}}" class="card-img"
+                                    alt=" {{$project->casestudy}}" />
+                                <div class="card-img-overlay">
+                                    <p class="card-text">{{$project->year}}</p>
+                                    <h5 class="card-title">
+                                        {{$project->casestudy}}
+                                    </h5>
+                                    <a class="card-link"
+                                        href="{{route('project.view' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     @endforeach
-                    
+
                 </div>
             </div>
         </section>
@@ -91,10 +107,14 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12">
-                        <p class="work_alert">{{__('words.need_a_full_stack_developer')}}</p>
-                        <div class="work_link">
-                            <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a>
-                            <span>&#8594;</span>
+                        <div data-aos="fade-right">
+                            <p class="work_alert">{{__('words.need_a_full_stack_developer')}}</p>
+                        </div>
+                        <div data-aos="fade-left">
+                            <div class="work_link">
+                                <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a>
+                                <span>&#8594;</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,5 +128,14 @@
 
     </div>
     @endsection
+    @section('scripts')
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 400,
+            duration: 1000,
+        });
 
+    </script>
+    @endsection
 </x-frontend-master>

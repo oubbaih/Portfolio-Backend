@@ -76,7 +76,7 @@
     @endif
 
     <!-- ==========================     Font Arab  End    ==========================  -->
-
+    @yield('styles')
 </head>
 
 <body>
@@ -142,6 +142,7 @@
                     </div>
                     <!-- Menu Links  -->
                     <div class="offcanvas-body">
+
                         <ul
                             class="navbar-nav justify-content-end flex-grow-1 p-4 align-items-center align-content-center">
                             <li class="nav-item">
@@ -292,6 +293,9 @@
     <script src="{{asset('js/front/main.js')}}"></script>
 
     <!-- ==========================    Main js End    ==========================  -->
+
+    @yield('scripts')
+
 </body>
 
 </html>
