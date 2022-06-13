@@ -212,9 +212,16 @@
                             <span>{{__('words.email')}}:{{$setting->email}} </span>
                             <span>{{__('words.phone')}}:{{$setting->phone}} </span>
                         </li>
+                        @if(Auth()->user())
+                        <a class="nav-link" href="/login">
+                            {{__('words.Logout')}}
+                        </a>
+                        @else
                         <a class="nav-link" href="/login">
                             {{__('words.login')}}
                         </a>
+                        @endif
+                        
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
