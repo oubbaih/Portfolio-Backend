@@ -32,7 +32,7 @@ Route::get('/download', function () {
   $setting = Setting::all()->first();
   $file = storage_path() . '/' . $setting->cv;
   $header = array(
-    'content-Type' => 'application/pdf'
+    'content-Type:application/pdf'
   );
   if (file_exists($file)) {
     return Response::download($file, "Download My Resume.PDF", $header);
