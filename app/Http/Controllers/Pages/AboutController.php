@@ -76,6 +76,7 @@ class AboutController extends Controller
     {
         //
         $about->update($request->except('_token', 'images'));
+        $oldImage = [];
         if ($request->file('images')) {
             if ($about->images != null) {
                 $oldImage = $about->images;

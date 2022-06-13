@@ -147,6 +147,7 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         //
+        $oldImages = [];
         $project->update($request->except('_token', 'filename'));
         if ($request->file('filename')) {
             if ($project->filename != null) {
