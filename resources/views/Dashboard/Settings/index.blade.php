@@ -41,6 +41,7 @@
                         <label for="faviconid" class="form-label">Background Image</label>
                         <input type="file" name="bgImage" class="form-control-file">
                     </div>
+                    <p>{{$setting->cv}}</p>
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Cv PDF</label>
                         <input type="file" name="cv" class="form-control-file">

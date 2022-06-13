@@ -8,7 +8,12 @@
                         >
                     </li>
 
-                    <li class="nav-title">UI Elements</li>
+                    <li class="nav-title">
+                         <a class="nav-link" href="{{route('home')}}"
+                            ><i class="icon-speedometer"></i> Home Page
+                            </a
+                        >
+                    </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link nav-dropdown-toggle" href="#"
                             ><i class="icon-puzzle"></i>Projects</a
