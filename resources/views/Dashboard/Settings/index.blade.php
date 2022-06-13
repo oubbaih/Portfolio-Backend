@@ -14,7 +14,10 @@
                         <label for="faviconid" class="form-label">FavIcon</label>
                         <input type="file" name="favicon" class="form-control-file">
                     </div>
+
+
                     <img src="{{asset($setting->logo)}}" class="setting-img" alt="">
+
 
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Logo Image</label>
