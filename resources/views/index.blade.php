@@ -45,19 +45,22 @@
                                 {{__('words.or')}}
                                 <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
                             </div>
+                             <div class="mt-2">
+                                <a href="/download" class="btn btn-outline-dark">{{__('words.cv')}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ==========================   CV Download Link Start    ==========================  -->
+    {{-- <!-- ==========================   CV Download Link Start    ==========================  -->
     {{-- <div data-aos="fade-right"> --}}
-        <div class="d-grid gap-2 col-6 mx-auto">
+        {{-- <div class="d-grid gap-2 col-6">
             <a href="/download" class="btn btn-dark btn-lg ">{{__('words.cv')}}</a>
-        </div>
+        </div> --}}
     {{-- </div> --}}
-    <!-- ==========================    CV Download Link End      ==========================  -->
+    <!-- ==========================    CV Download Link End      ==========================  --> --}}
     <a class="col-12 header_content-icon mt-md-2" href="#case-study">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
             class="bi bi-arrow-down-square" viewBox="0 0 16 16">
