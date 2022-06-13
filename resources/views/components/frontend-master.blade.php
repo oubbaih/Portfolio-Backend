@@ -165,7 +165,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('words.logout') }}
                                 </a>
                             </li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -214,7 +214,7 @@
                         </li>
                         @if(Auth()->user())
                         <a class="nav-link" href="/login">
-                            {{__('words.Logout')}}
+                            {{__('words.logout')}}
                         </a>
                         @else
                         <a class="nav-link" href="/login">
