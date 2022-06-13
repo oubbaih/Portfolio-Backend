@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/download', function () {
   $setting = Setting::all()->first();
-  $file = public_path() . '/' . $setting->cv;
+  $file = storage_path() . '/' . $setting->cv;
   $header = array(
     'content-Type' => 'application/pdf'
   );
