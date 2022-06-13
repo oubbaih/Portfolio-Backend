@@ -88,13 +88,9 @@ class ProjectController extends Controller
 
         if ($request->file('filename')) {
             $files = $request->file('filename');
+
             $images = [];
-            if ($project->filename != null) {
-                foreach ($project->filename as $image) {
-                    # code...
-                    $this->UnlinkImage($image);
-                }
-            }
+
             foreach ($files as $file) {
                 $filename = $file->getClientOriginalName();
                 $file_path = Str::uuid() . $filename;
@@ -104,12 +100,15 @@ class ProjectController extends Controller
             }
             $project->filename = $images;
         }
+
         if ($request->file('featureImage')) {
             $path = $this->ImageImport($request, 'featureImage');
             $project->featureImage = $path;
         }
 
         $project->save();
+
+
         return back();
     }
 
@@ -150,14 +149,13 @@ class ProjectController extends Controller
         //
         $project->update($request->except('_token', 'filename'));
         if ($request->file('filename')) {
+            if ($project->filename != null) {
+                $oldImages = $project->filename;
+            }
             $files = $request->file('filename');
             $images = [];
             foreach ($files as $file) {
-                if ($project->filename) {
-                    foreach ($project->filename as $image) {
-                        $this->UnlinkImage($image);
-                    }
-                }
+
                 $filename = $file->getClientOriginalName();
                 $file_path = Str::uuid() . $filename;
                 $file->move(public_path('images/'), $file_path);
@@ -167,13 +165,21 @@ class ProjectController extends Controller
             $project->filename = $images;
         }
         if ($request->file('featureImage')) {
-            if ($project->featureImage == null) {
-                $this->UnlinkImage($project->featureImage);
+            if ($project->featureImage != null) {
+                $oldFeatureImage =  $project->featureImage;
             }
             $path = $this->ImageImport($request, 'featureImage');
             $project->featureImage = $path;
         }
         $project->save();
+
+
+
+        foreach ($oldImages as $image) {
+            # code...
+            $this->UnlinkImage($image);
+        }
+        $this->UnlinkImage($oldFeatureImage);
         return back();
     }
 

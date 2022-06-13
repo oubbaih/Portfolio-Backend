@@ -79,12 +79,7 @@ class AboutController extends Controller
         if ($request->file('images')) {
             // dd($request->images);
             if ($about->images != null) {
-                foreach ($about->images as $image) {
-
-
-                    # code...
-                    $this->UnlinkImage($image);
-                }
+                $oldImage = $about->images;
             }
             $files = $request->file('images');
             $images = [];
@@ -99,6 +94,11 @@ class AboutController extends Controller
             $about->images = $images;
         }
         $about->save();
+
+        foreach ($oldImage as $image) {
+            # code...
+            $this->UnlinkImage($image);
+        }
         return back();
     }
 

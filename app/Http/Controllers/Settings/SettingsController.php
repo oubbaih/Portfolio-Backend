@@ -77,41 +77,51 @@ class SettingsController extends Controller
         $setting->update($request->except('_token', 'logo', 'favicon', 'personalImage', 'bgImage'));
         if ($request->file('favicon')) {
             // dd($setting->favicon);
-            $this->UnlinkImage($setting->favicon);
+            $oldImage = $setting->favicon;
             $path = $this->ImageImport($request, 'favicon');
             $setting->favicon = $path;
+            $setting->save();
+            $this->UnlinkImage($oldImage);
         }
         if ($request->file('logo')) {
-            $this->UnlinkImage($setting->logo);
+            $oldImage = $setting->logo;
 
             $path = $this->ImageImport($request, 'logo');
             $setting->logo = $path;
+            $setting->save();
+            $this->UnlinkImage($oldImage);
         }
         if ($request->file('persnalImage')) {
-            $this->UnlinkImage($setting->persnalImage);
-
+            $oldImage = $setting->persnalImage;
             $path = $this->ImageImport($request, 'persnalImage');
             $setting->persnalImage = $path;
+            $setting->save();
+
+            $this->UnlinkImage($oldImage);
         }
         if ($request->file('avatar')) {
-            $this->UnlinkImage($setting->avatar);
-
+            $oldImage = $setting->avatar;
             $path = $this->ImageImport($request, 'avatar');
             $setting->avatar = $path;
+            $setting->save();
+
+            $this->UnlinkImage($oldImage);
         }
         if ($request->file('bgImage')) {
-            $this->UnlinkImage($setting->bgImage);
-
+            $oldImage = $setting->bgImage;
             $path = $this->ImageImport($request, 'bgImage');
             $setting->bgImage = $path;
+            $setting->save();
+            $this->UnlinkImage($oldImage);
         }
         if ($request->file('cv')) {
-            $this->UnlinkImage($setting->cv);
-
+            $oldImage = $setting->cv;
             $path = $this->ImageImport($request, 'cv');
             $setting->cv = $path;
+            $setting->save();
+            $this->UnlinkImage($oldImage);
         }
-        $setting->save();
+
         return back();
     }
 
