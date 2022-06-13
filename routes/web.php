@@ -35,7 +35,7 @@ Route::get('/download', function () {
     'content-Type' => 'application/pdf'
   );
   if (file_exists($file)) {
-
+    dd($file);
     return Response::download($file, "Download My Resume.PDF", $header);
   }
 });
