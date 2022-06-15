@@ -41,18 +41,18 @@ class ProjectController extends Controller
 
         if (is_numeric($request->id_use)) {
             $project = Project::where('id', $request->id_use)->first();
-            if (file_exists(public_path() . '/'  . $project->featureImage) && $project->featureImage != null) {
-                unlink(public_path() . '/'  . $project->featureImage);
+
+            if (Storage::disk('s3')->exists($project->featureImage)) {
+                Storage::disk('s3')->delete($project->featureImage);
             }
 
             if (!$project->filename == null) {
                 foreach ($project->filename as $file) {
-                    if (file_exists(public_path() . '/'  . $file) && $file != null) {
-                        unlink(public_path() . '/'  . $file);
+                    if (Storage::disk('s3')->exists($file)) {
+                        Storage::disk('s3')->delete($file);
                     }
                 }
             }
-
             $project->delete();
         }
         return back();

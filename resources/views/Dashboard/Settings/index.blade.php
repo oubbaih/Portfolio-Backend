@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Settings
                 </div>
-                <img src="{{asset($setting->favicon)}}" class="setting-img" alt="">
+                <img src="{{ Storage::disk('s3')->url($setting->favicon)}}" class="setting-img" alt="">
                 <div class="card-block">
                     <div class="form-group">
                         <label for="faviconid" class="form-label">FavIcon</label>
@@ -16,7 +16,7 @@
                     </div>
 
 
-                    <img src="{{asset($setting->logo)}}" class="setting-img" alt="">
+                    <img src="{{ Storage::disk('s3')->url($setting->logo)}}" class="setting-img" alt="">
 
 
                     <div class="form-group">
@@ -30,19 +30,19 @@
                         <label for="faviconid" class="form-label">Personal Image</label>
                         <input type="file" name="persnalImage" class="form-control-file">
                     </div>
-                    <img src="{{asset($setting->avatar)}}" class="setting-img" alt="">
+                    <img src="{{ Storage::disk('s3')->url($setting->avatar)}}" class="setting-img" alt="">
 
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Avatar Image</label>
                         <input type="file" name="avatar" class="form-control-file">
                     </div>
-                    <img src="{{asset($setting->bgImage)}}" class="setting-img" alt="">
+                    <img src="{{ Storage::disk('s3')->url($setting->bgImage)}}" class="setting-img" alt="">
 
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Background Image</label>
                         <input type="file" name="bgImage" class="form-control-file">
                     </div>
-                    <p>{{$setting->cv}}</p>
+                    <p>{{Storage::disk('s3')->url($setting->cv)}}</p>
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Cv PDF</label>
                         <input type="file" name="cv" class="form-control-file">

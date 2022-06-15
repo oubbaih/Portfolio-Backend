@@ -7,6 +7,7 @@ use App\Models\Pages\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -85,11 +86,11 @@ class AboutController extends Controller
             $images = [];
             // dd($files);/
             foreach ($files as $file) {
-                $filename = $file->getClientOriginalName();
-                $file_path = Str::uuid() . $filename;
-                $file->move(public_path('images/'), $file_path);
-                $path = 'images/' . $file_path;
-                array_push($images, $path);
+                $name = Str::uuid() . $file->getClientOriginalName();
+                $filePath = 'images/' . $name;
+                Storage::disk('s3')->put($filePath, file_get_contents($file));
+
+                array_push($images, $filePath);
             }
             $about->images = $images;
         }
@@ -97,7 +98,9 @@ class AboutController extends Controller
 
         foreach ($oldImage as $image) {
             # code...
-            $this->UnlinkImage($image);
+            if (Storage::disk('s3')->exists($image)) {
+                Storage::disk('s3')->delete($image);
+            }
         }
         return back();
     }
@@ -111,13 +114,5 @@ class AboutController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    function UnlinkImage($image_path)
-    {
-        if (File::exists($image_path)) {
-            //File::delete($image_path);
-            unlink($image_path);
-        }
     }
 }
