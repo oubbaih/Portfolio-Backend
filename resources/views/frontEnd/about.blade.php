@@ -59,7 +59,7 @@
                     active
                 @endif ">
               <img
-                src="{{asset($image)}}"
+                src="{{ Storage::disk('s3')->url($image)}}"
                 class="d-block w-100"
                 alt="{{$loop->index}}"
               />
