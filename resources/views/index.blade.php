@@ -19,7 +19,7 @@
     @endsection
     <!-- ==========================    Header Section Start     ==========================  -->
     @section('header')
-    {{-- <section id="header" class="header">
+    <section id="header" class="header">
         <div class="container">
             <div class="header_logo">
                 <img src="{{ Storage::disk('s3')->url($setting->bgImage)}}" class="header_logo-img" alt="header logo" />
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
      <!-- ==========================   CV Download Link Start    ==========================  -->
     <!-- ==========================    CV Download Link End      ==========================  --> 
     <a class="col-12 header_content-icon mt-md-2" href="#case-study">
