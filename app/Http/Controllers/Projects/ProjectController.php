@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -92,18 +93,24 @@ class ProjectController extends Controller
             $images = [];
 
             foreach ($files as $file) {
-                $filename = $file->getClientOriginalName();
-                $file_path = Str::uuid() . $filename;
-                $file->move(public_path('images/'), $file_path);
-                $path = 'images/' . $file_path;
-                array_push($images, $path);
+                $name = Str::uuid() . $file->getClientOriginalName();
+                $filePath = 'images/' . $name;
+                array_push(
+                    $images,
+                    $filePath
+                );
+                Storage::disk('s3')->put($filePath, file_get_contents($file));
             }
             $project->filename = $images;
         }
 
         if ($request->file('featureImage')) {
-            $path = $this->ImageImport($request, 'featureImage');
-            $project->featureImage = $path;
+            $file = $request->file('featureImage');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $project->featureImage = $filePath;
+            $project->save();
         }
 
         $project->save();
@@ -156,12 +163,13 @@ class ProjectController extends Controller
             $files = $request->file('filename');
             $images = [];
             foreach ($files as $file) {
-
-                $filename = $file->getClientOriginalName();
-                $file_path = Str::uuid() . $filename;
-                $file->move(public_path('images/'), $file_path);
-                $path = 'images/' . $file_path;
-                array_push($images, $path);
+                $name = Str::uuid() . $file->getClientOriginalName();
+                $filePath = 'images/' . $name;
+                array_push(
+                    $images,
+                    $filePath
+                );
+                Storage::disk('s3')->put($filePath, file_get_contents($file));
             }
             $project->filename = $images;
         }
@@ -169,18 +177,23 @@ class ProjectController extends Controller
             if ($project->featureImage != null) {
                 $oldFeatureImage =  $project->featureImage;
             }
-            $path = $this->ImageImport($request, 'featureImage');
-            $project->featureImage = $path;
+            $file = $request->file('featureImage');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $project->featureImage = $filePath;
         }
         $project->save();
-
-
-
-        foreach ($oldImages as $image) {
-            # code...
-            $this->UnlinkImage($image);
+        foreach ($oldImages as $img) {
+            if (Storage::disk('s3')->exists($img)) {
+                Storage::disk('s3')->delete($img);
+            }
         }
-        $this->UnlinkImage($oldFeatureImage);
+        if (Storage::disk('s3')->exists($oldFeatureImage)) {
+            Storage::disk('s3')->delete($oldFeatureImage);
+        }
+
+
         return back();
     }
 
@@ -193,21 +206,5 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //
-    }
-    function ImageImport($request, $name)
-    {
-        $file = $request->file($name);
-        $filename = $file->getClientOriginalName();
-        $file_path = Str::uuid() . $filename;
-        $file->move(public_path('images/'), $file_path);
-        $path = 'images/' . $file_path;
-        return $path;
-    }
-    function UnlinkImage($image_path)
-    {
-        if (File::exists($image_path)) {
-            //File::delete($image_path);
-            unlink($image_path);
-        }
     }
 }

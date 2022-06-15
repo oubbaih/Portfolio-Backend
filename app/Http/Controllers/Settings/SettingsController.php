@@ -77,23 +77,35 @@ class SettingsController extends Controller
         //
         $setting->update($request->except('_token', 'logo', 'favicon', 'personalImage', 'bgImage'));
         if ($request->file('favicon')) {
-            // dd($setting->favicon);
-            $oldImage = $setting->favicon;
-            $path = $this->ImageImport($request, 'favicon');
-            $setting->favicon = $path;
+            $oldfavicon = $setting->favicon;
+            $file = $request->file('favicon');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $setting->favicon = $filePath;
             $setting->save();
-            $this->UnlinkImage($oldImage);
+
+
+            if (Storage::disk('s3')->exists($oldfavicon)) {
+                Storage::disk('s3')->delete($oldfavicon);
+            }
         }
         if ($request->file('logo')) {
-            $oldImage = $setting->logo;
-
-            $path = $this->ImageImport($request, 'logo');
-            $setting->logo = $path;
+            $oldlogo = $setting->logo;
+            $file = $request->file('logo');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $setting->logo = $filePath;
             $setting->save();
-            $this->UnlinkImage($oldImage);
+
+
+            if (Storage::disk('s3')->exists($oldlogo)) {
+                Storage::disk('s3')->delete($oldlogo);
+            }
         }
         if ($request->file('persnalImage')) {
-            $oldimage = $setting->persnalImage;
+            $oldpersnalImage = $setting->persnalImage;
             $file = $request->file('persnalImage');
             $name = Str::uuid() . $file->getClientOriginalName();
             $filePath = 'images/' . $name;
@@ -102,31 +114,51 @@ class SettingsController extends Controller
             $setting->save();
 
 
-            if (Storage::disk('s3')->exists($oldimage)) {
-                Storage::disk('s3')->delete($oldimage);
+            if (Storage::disk('s3')->exists($oldpersnalImage)) {
+                Storage::disk('s3')->delete($oldpersnalImage);
             }
         }
         if ($request->file('avatar')) {
-            $oldImage = $setting->avatar;
-            $path = $this->ImageImport($request, 'avatar');
-            $setting->avatar = $path;
+            $oldavatar = $setting->avatar;
+            $file = $request->file('avatar');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $setting->avatar = $filePath;
             $setting->save();
 
-            $this->UnlinkImage($oldImage);
+
+            if (Storage::disk('s3')->exists($oldavatar)) {
+                Storage::disk('s3')->delete($oldavatar);
+            }
         }
         if ($request->file('bgImage')) {
-            $oldImage = $setting->bgImage;
-            $path = $this->ImageImport($request, 'bgImage');
-            $setting->bgImage = $path;
+            $oldbgImage = $setting->bgImage;
+            $file = $request->file('bgImage');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $setting->bgImage = $filePath;
             $setting->save();
-            $this->UnlinkImage($oldImage);
+
+
+            if (Storage::disk('s3')->exists($oldbgImage)) {
+                Storage::disk('s3')->delete($oldbgImage);
+            }
         }
         if ($request->file('cv')) {
-            $oldImage = $setting->cv;
-            $path = $this->ImageImport($request, 'cv');
-            $setting->cv = $path;
+            $oldcv = $setting->cv;
+            $file = $request->file('cv');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $setting->cv = $filePath;
             $setting->save();
-            $this->UnlinkImage($oldImage);
+
+
+            if (Storage::disk('s3')->exists($oldcv)) {
+                Storage::disk('s3')->delete($oldcv);
+            }
         }
 
         return back();
@@ -141,20 +173,5 @@ class SettingsController extends Controller
     public function destroy($id)
     {
         //
-    }
-    function ImageImport($request, $name)
-    {
-        $file = $request->file($name);
-        $filename = $file->getClientOriginalName();
-        $file_path = Str::uuid() . $filename;
-        $file->move(public_path('images/'), $file_path);
-        $path = 'images/' . $file_path;
-        return $path;
-    }
-    function UnlinkImage($image_path)
-    {
-        if (File::exists($image_path)) {
-            unlink($image_path);
-        }
     }
 }
