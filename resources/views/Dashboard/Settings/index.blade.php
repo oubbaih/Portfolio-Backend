@@ -23,7 +23,8 @@
                         <label for="faviconid" class="form-label">Logo Image</label>
                         <input type="file" name="logo" class="form-control-file">
                     </div>
-                    <img src="{{asset($setting->persnalImage)}}" class="setting-img" alt="">
+                    {{-- <img src="{{asset($setting->persnalImage)}}" class="setting-img" alt=""> --}}
+                    <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="setting-img" alt="">
 
                     <div class="form-group">
                         <label for="faviconid" class="form-label">Personal Image</label>

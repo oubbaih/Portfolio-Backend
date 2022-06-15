@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Settings\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class SettingsController extends Controller
@@ -92,12 +93,18 @@ class SettingsController extends Controller
             $this->UnlinkImage($oldImage);
         }
         if ($request->file('persnalImage')) {
-            $oldImage = $setting->persnalImage;
-            $path = $this->ImageImport($request, 'persnalImage');
-            $setting->persnalImage = $path;
+            $oldimage = $setting->persnalImage;
+            $file = $request->file('persnalImage');
+            $name = Str::uuid() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file));
+            $setting->persnalImage = $filePath;
             $setting->save();
 
-            $this->UnlinkImage($oldImage);
+
+            if (Storage::disk('s3')->exists($oldimage)) {
+                Storage::disk('s3')->delete($oldimage);
+            }
         }
         if ($request->file('avatar')) {
             $oldImage = $setting->avatar;
