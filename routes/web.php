@@ -31,14 +31,18 @@ use Illuminate\Support\Facades\Storage;
 
 Route::get('/download', function () {
   $setting = Setting::all()->first();
-  $file = $setting->cv;
+  $attachment = $setting->cv;
+
   $header = array(
-    'content-Type' => 'application/pdf'
+    'Content-Type'        => 'application/pdf',
+
+    'Content-Disposition' => 'attachment; filename="' . 'OubbaihLahcenCv.pdf' . '"',
   );
-  if ($file) {
-    return Storage::download($file, "Download My Resume.PDF", $header);
+  if (Storage::disk('s3')->exists($setting->cv)) {
+    return Response::make(Storage::disk('s3')->get($attachment), 200, $header);
   }
 });
+
 
 
 
