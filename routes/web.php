@@ -58,7 +58,7 @@ Route::get('/contact', ContactController::class . '@front')->name('contact.front
 
 
 // show Sing Project 
-Route::get('/project/{project}', FrontController::class . '@show')->name('project.view');
+Route::get('/project/{project}', FrontController::class . '@show')->name('project.first');
 Route::get('/project', FrontController::class . '@front')->name('project.front');
 
 Auth::routes();
