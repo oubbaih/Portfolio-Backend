@@ -40,7 +40,11 @@
                                 <p class="header_content-wrap-info">
                                     {{$setting->description}}
                                 </p>
-                            </div>
+                            </div>    
+
+
+
+                            
                             <div>
                                 <a href="/#" class="header_content-links m-2">{{__('words.view_project')}}</a>
                                 {{__('words.or')}}
