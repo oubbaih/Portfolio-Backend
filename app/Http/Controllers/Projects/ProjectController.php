@@ -94,7 +94,7 @@ class ProjectController extends Controller
 
             foreach ($files as $file) {
                 $name = Str::uuid() . $file->getClientOriginalName();
-                $filePath = 'images/' . $name;
+                $filePath = 'images/slide' . $name;
                 array_push(
                     $images,
                     $filePath
@@ -164,13 +164,14 @@ class ProjectController extends Controller
             $images = [];
             foreach ($files as $file) {
                 $name = Str::uuid() . $file->getClientOriginalName();
-                $filePath = 'images/' . $name;
+                $filePath = 'images/slide/' . $name;
                 array_push(
                     $images,
                     $filePath
                 );
                 Storage::disk('s3')->put($filePath, file_get_contents($file));
             }
+
             $project->filename = $images;
         }
         if ($request->file('featureImage')) {
@@ -178,10 +179,10 @@ class ProjectController extends Controller
                 $oldFeatureImage =  $project->featureImage;
             }
             $file = $request->file('featureImage');
-            $name = Str::uuid() . $file->getClientOriginalName();
-            $filePath = 'images/' . $name;
-            Storage::disk('s3')->put($filePath, file_get_contents($file));
-            $project->featureImage = $filePath;
+            $name = Str::uuid() . $file->getClientOriginalExtension();
+            $path = 'images/' . $name;
+            Storage::disk('s3')->put($path, file_get_contents($file));
+            $project->featureImage = $path;
         }
         $project->save();
         foreach ($oldImages as $img) {
@@ -189,7 +190,7 @@ class ProjectController extends Controller
                 Storage::disk('s3')->delete($img);
             }
         }
-        if (Storage::disk('s3')->exists($oldFeatureImage)) {
+        if ($oldFeatureImage) {
             Storage::disk('s3')->delete($oldFeatureImage);
         }
 

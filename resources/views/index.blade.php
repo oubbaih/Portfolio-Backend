@@ -27,7 +27,8 @@
             <div class="row">
                 <div data-aos="fade-left">
                     <div class="col-4 header_personal d-md-block">
-                        <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="header-personal-img" alt="personal image" />
+                        <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="header-personal-img"
+                            alt="personal image" />
                     </div>
                 </div>
                 <div data-aos="fade-right">
@@ -45,7 +46,7 @@
                                 {{__('words.or')}}
                                 <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
                             </div>
-                             <div class="mt-2">
+                            <div class="mt-2">
                                 <a href="/download" class="btn btn-outline-dark">{{__('words.cv')}}</a>
                             </div>
                         </div>
@@ -53,14 +54,14 @@
                 </div>
             </div>
         </div>
-    </section>   
+    </section>
 
 
 
 
-    
-     <!-- ==========================   CV Download Link Start    ==========================  -->
-    <!-- ==========================    CV Download Link End      ==========================  --> 
+
+    <!-- ==========================   CV Download Link Start    ==========================  -->
+    <!-- ==========================    CV Download Link End      ==========================  -->
     <a class="col-12 header_content-icon mt-md-2" href="#case-study">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
             class="bi bi-arrow-down-square" viewBox="0 0 16 16">
@@ -92,9 +93,11 @@
                     <div class="col-md-6 col-sm-12 mb-4">
                         <div data-aos="fade-right">
                             <div class="card bg-dark text-white">
-                                <img src=" {{ Storage::disk('s3')->url($setting->featureImage)}}" class="card-img"
+
+                                <img src=" {{ Storage::disk('s3')->url($project->featureImage)}}" class="card-img"
                                     alt=" {{$project->casestudy}}" />
-                                   
+
+
                                 <div class="card-img-overlay">
                                     <p class="card-text">{{$project->year}}</p>
                                     <h5 class="card-title">

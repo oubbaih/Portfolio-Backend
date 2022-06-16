@@ -7,6 +7,7 @@ use App\Models\Settings\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Support\Str;
 
 class SettingsController extends Controller
@@ -77,7 +78,10 @@ class SettingsController extends Controller
         //
         $setting->update($request->except('_token', 'logo', 'favicon', 'personalImage', 'bgImage'));
         if ($request->file('favicon')) {
-            $oldfavicon = $setting->favicon;
+            if ($setting->favicon) {
+
+                $oldfavicon = $setting->favicon;
+            }
             $file = $request->file('favicon');
             $name = Str::uuid() . $file->getClientOriginalName();
             $filePath = 'images/' . $name;
@@ -86,7 +90,7 @@ class SettingsController extends Controller
             $setting->save();
 
 
-            if (Storage::disk('s3')->exists($oldfavicon)) {
+            if ($oldfavicon) {
                 Storage::disk('s3')->delete($oldfavicon);
             }
         }
@@ -100,7 +104,7 @@ class SettingsController extends Controller
             $setting->save();
 
 
-            if (Storage::disk('s3')->exists($oldlogo)) {
+            if ($oldlogo) {
                 Storage::disk('s3')->delete($oldlogo);
             }
         }
@@ -114,7 +118,7 @@ class SettingsController extends Controller
             $setting->save();
 
 
-            if (Storage::disk('s3')->exists($oldpersnalImage)) {
+            if ($oldpersnalImage) {
                 Storage::disk('s3')->delete($oldpersnalImage);
             }
         }
@@ -128,7 +132,7 @@ class SettingsController extends Controller
             $setting->save();
 
 
-            if (Storage::disk('s3')->exists($oldavatar)) {
+            if ($oldavatar) {
                 Storage::disk('s3')->delete($oldavatar);
             }
         }
@@ -142,7 +146,7 @@ class SettingsController extends Controller
             $setting->save();
 
 
-            if (Storage::disk('s3')->exists($oldbgImage)) {
+            if ($oldbgImage) {
                 Storage::disk('s3')->delete($oldbgImage);
             }
         }
@@ -156,7 +160,7 @@ class SettingsController extends Controller
             $setting->save();
 
 
-            if (Storage::disk('s3')->exists($oldcv)) {
+            if ($oldcv) {
                 Storage::disk('s3')->delete($oldcv);
             }
         }
