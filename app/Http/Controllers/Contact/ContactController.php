@@ -18,21 +18,16 @@ class ContactController extends Controller
         return Datatables::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
-                $actionBtn = '<a href="' . Route('project.edit', $row) . '" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                $actionBtn = '<a href="' . Route('contact.show', $row) . '" class="edit btn btn-success btn-sm">View</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
                 return $actionBtn;
             })
             ->rawColumns(['action'])
             ->make(true);
     }
-
-
     public function front()
     {
         return view('frontEnd.contact');
     }
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -77,6 +72,8 @@ class ContactController extends Controller
     public function show($id)
     {
         //
+        $contact = Contact::findOrFail($id);
+        return view('Dashboard.Contact.view', compact('contact'));
     }
 
     /**
