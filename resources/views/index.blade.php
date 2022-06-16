@@ -22,13 +22,13 @@
     <section id="header" class="header">
         <div class="container">
             <div class="header_logo">
-                <img src="{{ Storage::disk('s3')->url($setting->bgImage)}}" class="header_logo-img" alt="header logo" />
+                {{-- <img src="{{ Storage::disk('s3')->url($setting->bgImage)}}" class="header_logo-img" alt="header logo" /> --}}
             </div>
             <div class="row">
                 <div data-aos="fade-left">
                     <div class="col-4 header_personal d-md-block">
-                        <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="header-personal-img"
-                            alt="personal image" />
+                        {{-- <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="header-personal-img"
+                            alt="personal image" /> --}}
                     </div>
                 </div>
                 <div data-aos="fade-right">
@@ -94,8 +94,8 @@
                         <div data-aos="fade-right">
                             <div class="card bg-dark text-white">
 
-                                <img src=" {{ Storage::disk('s3')->url($project->featureImage)}}" class="card-img"
-                                    alt=" {{$project->casestudy}}" />
+                                {{-- <img src=" {{ Storage::disk('s3')->url($project->featureImage)}}" class="card-img"
+                                    alt=" {{$project->casestudy}}" /> --}}
 
 
                                 <div class="card-img-overlay">
@@ -103,9 +103,9 @@
                                     <h5 class="card-title">
                                         {{$project->casestudy}}
                                     </h5>
-                                    {{-- <a class="card-link"
-                                        href="{{'/'.route('project.view' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
-                                    </a> --}}
+                                    <a class="card-link"
+                                        href="{{route('project.view' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
