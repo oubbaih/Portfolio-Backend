@@ -80,7 +80,7 @@
 
                     <div class="col-6">
                         <p class="portfolio_text">
-                            {{$project->description}}
+                            {!! $project->description !!}
                             <div>
                                 <span class="portfolio_agency">{{__('words.agency')}}: </span>
                                 <strong class="portfolio_name">{{$project->agencyname}}</strong>
