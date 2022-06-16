@@ -18,12 +18,35 @@ class ContactController extends Controller
         return Datatables::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
-                $actionBtn = '<a href="' . Route('contact.show', $row) . '" class="edit btn btn-success btn-sm">View</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                $actionBtn = '<a href="' . Route('contact.show', $row) . '" class="edit btn btn-success btn-sm">View</a> <a href="javascript:void(0)" data-toggle="modal" data-target="#contactBTN"  id="deleteBtn" data-id="' . $row->id . '" onClick="clickFinc()" class="delete btn btn-danger btn-sm">Delete</a>';
                 return $actionBtn;
             })
             ->rawColumns(['action'])
             ->make(true);
     }
+
+
+
+    public function delete(Request $request)
+    {
+        $request->validate([
+            'id_use' => 'required|numeric'
+        ]);
+
+        if (is_numeric($request->id_use)) {
+            $project = Contact::where('id', $request->id_use)->first();
+            $project->delete();
+        }
+        return back();
+    }
+
+
+
+
+
+
+
+
     public function front()
     {
         return view('frontEnd.contact');

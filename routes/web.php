@@ -55,7 +55,7 @@ Route::get('/', Controller::class . '@index')->name('home');
 Route::get('/about', AboutFrontController::class . '@index')->name('about.front');
 // contact form view
 Route::get('/contact', ContactController::class . '@front')->name('contact.front');
-Route::get('contact/list', ContactController::class . '@getContactLists')->name('contact.list');
+
 
 // show Sing Project 
 Route::get('/project/{project}', FrontController::class . '@show')->name('project.view');
@@ -67,7 +67,9 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function () {
   //Projects Additional Routes 
   Route::get('project/list', ProjectController::class . '@getAllProjects')->name('project.list');
   Route::delete('project/delete', ProjectController::class . '@delete')->name('project.delete');
-
+  //Contact Additional Routes 
+  Route::get('contact/list', ContactController::class . '@getContactLists')->name('contact.list');
+  Route::delete('contact/delete', ContactController::class . '@delete')->name('conatct.delete');
   Route::resources([
     'setting' => SettingsController::class,
     'about' => AboutController::class,
