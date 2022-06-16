@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/gif/png/svg" href="@if($setting->favicon){{Storage::disk('s3')->url($setting->favicon)}} :/" />
+    <link rel="icon" type="image/gif/png/svg" href="@if($setting->favicon){{Storage::disk('s3')->url($setting->favicon)}} : '/' @endif " />
     <link rel="stylesheet" href="{{asset('css/style-front.css')}}" />
     @yield('seo')
     <meta name="robots" content="noindex, nofollow" />
@@ -118,7 +118,7 @@
     <nav class="navbar fixed-top" id="navbar-id">
         <div class="container">
             <a class="navbar-brand logo" href="/">
-                <img src="@if($setting->favicon){{Storage::disk('s3')->url($setting->favicon)}}:/" alt="favicon" />
+                <img src="@if($setting->favicon){{Storage::disk('s3')->url($setting->favicon)}}: '/' @endif" alt="favicon" />
                 <img src="{{Storage::disk('s3')->url($setting->logo)}}" alt="logo" />
             </a>
             <button class="navbar-toggler menu" type="button" data-bs-toggle="offcanvas"
@@ -135,8 +135,8 @@
                 <div class="container">
                     <div class="offcanvas-header">
                         <a class="offcanvas-title menulogo" id="offcanvasNavbarLabel" href="/">
-                            <img src="@if($setting->favicon){{Storage::disk('s3')->url($setting->favicon)}} : /" alt="favicon" />
-                            <img src="@if($setting->logo){{Storage::disk('s3')->url($setting->logo)}} : /" alt="logo" />
+                            <img src="@if($setting->favicon){{Storage::disk('s3')->url($setting->favicon)}} :  '/' @endif" alt="favicon" />
+                            <img src="@if($setting->logo){{Storage::disk('s3')->url($setting->logo)}} :  '/' @endif" alt="logo" />
                         </a>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
