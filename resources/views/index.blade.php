@@ -16,18 +16,20 @@
             <p class="loader_text-des">{{__('words.wait_a_bit')}}</p>
         </div>
     </div>
-    @endsection
+    @endsection   
+
+    
     <!-- ==========================    Header Section Start     ==========================  -->
     @section('header')
     <section id="header" class="header">
         <div class="container">
             <div class="header_logo">
-                <img src="{{ Storage::disk('s3')->url($setting->bgImage)}}" class="header_logo-img" alt="header logo" />
+                <img src="@if($setting->bgImage){{ Storage::disk('s3')->url($setting->bgImage)}} : /" class="header_logo-img" alt="header logo" />
             </div>
             <div class="row">
                 <div data-aos="fade-left">
                     <div class="col-4 header_personal d-md-block">
-                        <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="header-personal-img"
+                        <img src="@if($setting->persnalImage) {{ Storage::disk('s3')->url($setting->persnalImage)}} : /" class="header-personal-img"
                             alt="personal image" />
                     </div>
                 </div>
@@ -42,9 +44,9 @@
                                 </p>
                             </div>    
                             <div>
-                                <a  class="header_content-links m-2">{{__('words.view_project')}}</a>
+                                <a href="#" class="header_content-links m-2">{{__('words.view_project')}}</a>
                                 {{__('words.or')}}
-                                <a  class="header_content-links m-2">{{__('words.read_about_me')}}</a>
+                                <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
                             </div>
                             <div class="mt-2">
                                 <a href="/download" class="btn btn-outline-dark">{{__('words.cv')}}</a>
@@ -62,7 +64,7 @@
 
     <!-- ==========================   CV Download Link Start    ==========================  -->
     <!-- ==========================    CV Download Link End      ==========================  -->
-    <a class="col-12 header_content-icon mt-md-2" >
+    <a class="col-12 header_content-icon mt-md-2" href="#case-study">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
             class="bi bi-arrow-down-square" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
@@ -94,7 +96,7 @@
                         <div data-aos="fade-right">
                             <div class="card bg-dark text-white">
 
-                                <img src=" {{ Storage::disk('s3')->url($project->featureImage)}}" class="card-img"
+                                <img src="@if($project->featureImage) {{ Storage::disk('s3')->url($project->featureImage)}} : /" class="card-img"
                                     alt=" {{$project->casestudy}}" />
 
 
