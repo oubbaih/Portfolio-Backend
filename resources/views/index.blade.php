@@ -127,7 +127,7 @@
                         </div>
                         <div data-aos="fade-left">
                             <div class="work_link">
-                                {{-- <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a> --}}
+                                 <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a>
                                 <span>&#8594;</span>
                             </div>
                         </div>
