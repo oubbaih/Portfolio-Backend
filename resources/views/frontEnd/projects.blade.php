@@ -16,7 +16,7 @@
                     @foreach ($projects as $project)
                     <div class="col-md-6 col-sm-12 mb-4">
                         <div class="card bg-dark text-white">
-                            <img src=" {{ Storage::disk('s3')->url($project->featureImage)}}" class="card-img"
+                            <img src="{{ Storage::disk('s3')->url($project->featureImage)}}" class="card-img"
                                 alt=" {{$project->casestudy}}" />
                             <div class="card-img-overlay">
                                 <p class="card-text">{{$project->year}}</p>
@@ -24,7 +24,7 @@
                                     {{$project->casestudy}}
                                 </h5>
                                 <a class="card-link"
-                                    href="{{route('project.show' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
+                                    href="{{route('project.first' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
                                 </a>
                             </div>
                         </div>
