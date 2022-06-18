@@ -20,10 +20,6 @@
 
     # Put the rest of your rewrite rules here
 
- RewriteEngine On
-RewriteCond %{HTTP_HOST} ^ oubbaih.com [NC] 
-RewriteRule ^(.*)$ https://www.oubbaih.com/$1 [L,R=301] 
-
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
