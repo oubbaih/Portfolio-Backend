@@ -65,4 +65,7 @@ return [
   'portfolio' => 'portfolio',
   'year' => 'year',
   'cv' => 'Download My Resume',
+  'close' => 'close',
+
+
 ];

@@ -65,7 +65,7 @@ return [
   'dashboard' => 'tableau de bord',
   'portfolio' => 'portefeuille',
   'cv' => 'Télécharger mon CV',
-
+  'close' => 'proche',
 
 
 

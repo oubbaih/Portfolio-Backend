@@ -53,6 +53,15 @@
                 right: initial;
             }
 
+            .btn-close {
+                color: #fff;
+                font-size: 12px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+            }
+
             a.navbar-brand.logo>img:last-first {
                 width: 30px;
             }
@@ -61,13 +70,15 @@
                 width: 80px;
             }
         }
-    @media (max-width: 575.98px) {
+
+        @media (max-width: 575.98px) {
             .header_personal {
                 left: -10%;
                 top: 50%;
                 transform: scaleX(-1);
             }
         }
+
         @media only screen and (max-width: 767px) {
             .footer {
                 text-align: center;
@@ -114,11 +125,13 @@
                 right: initial;
             }
 
-            .logo>img:last-child, .menulogo>img:last-child {
+            .logo>img:last-child,
+            .menulogo>img:last-child {
                 width: 100px;
             }
 
-            .logo>img:first-child , .menulogo>img:first-child {
+            .logo>img:first-child,
+            .menulogo>img:first-child {
                 width: 30px;
             }
 
@@ -146,7 +159,7 @@
             }
         }
 
-        .main{
+        .main {
             overflow: hidden;
         }
 
@@ -231,7 +244,9 @@
                             <img src="{{Storage::disk('s3')->url($setting->logo)}}" alt="logo" />
                         </a>
                         <button type="button" class="btn-close" id="close" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+                            aria-label="Close">
+                            {{__('words.close')}}
+                        </button>
                     </div>
                     <!-- Menu Links  -->
                     <div class="offcanvas-body">
