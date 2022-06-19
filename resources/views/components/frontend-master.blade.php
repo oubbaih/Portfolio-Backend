@@ -28,6 +28,14 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
+        @media (max-width: 575.98px) {
+            .header_personal {
+                left: -10%;
+                top: 50%;
+                transform: scaleX(-1);
+            }
+        }
+
         .header_content-user {
             letter-spacing: 0;
         }
@@ -81,6 +89,11 @@
     @endif
 
     <style>
+        .main,
+        .footer {
+            overflow-x: hidden;
+        }
+
         @media (max-width: 575.98px) {
             .header_content {
                 top: 40%;
@@ -125,6 +138,10 @@
             .header_content-wrap-info {
                 color: #fff;
             }
+        }
+
+        .main{
+            overflow: hidden;
         }
 
     </style>
