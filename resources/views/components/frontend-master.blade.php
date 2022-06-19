@@ -61,7 +61,13 @@
                 width: 80px;
             }
         }
-
+    @media (max-width: 575.98px) {
+            .header_personal {
+                left: -10%;
+                top: 50%;
+                transform: scaleX(-1);
+            }
+        }
         @media only screen and (max-width: 767px) {
             .footer {
                 text-align: center;
@@ -108,11 +114,11 @@
                 right: initial;
             }
 
-            .logo>img:last-child {
+            .logo>img:last-child, .menulogo>img:last-child {
                 width: 100px;
             }
 
-            .logo>img:first-child {
+            .logo>img:first-child , .menulogo>img:first-child {
                 width: 30px;
             }
 
