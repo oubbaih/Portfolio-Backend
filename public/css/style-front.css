@@ -13599,7 +13599,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 430px) {
     .header {
         min-height: calc(69vh) !important;
     }
