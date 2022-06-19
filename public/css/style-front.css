@@ -8161,6 +8161,8 @@ fieldset:disabled .btn {
     right: 0;
     left: 0;
     z-index: 1030;
+    overflow-x: hidden;
+    width: 100vw;
 }
 
 .fixed-bottom {
@@ -13572,6 +13574,8 @@ fieldset:disabled .btn {
 .header {
     margin-top: 5rem;
     min-height: calc(80vh);
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .header_logo {

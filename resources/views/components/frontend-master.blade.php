@@ -33,10 +33,8 @@
         }
 
         .header_personal {
-
             left: 10rem;
             right: initial;
-
         }
 
         @media only screen and (max-width: 767px) {
@@ -91,24 +89,41 @@
 
 
             .header_personal {
-                left: 0%;
+                left: 24%;
                 top: 50%;
                 transform: translate(-50%, 10%);
                 right: initial;
             }
 
-            .logo>img:first-first,
-            .menulogo:first-first {
-                width: 30px !important;
+            .logo>img:last-child {
+                width: 100px;
             }
 
-            .logo>img:last-child,
-            .menulogo:last-first {
-                width: 80px !important;
+            .logo>img:first-child {
+                width: 30px;
             }
 
             .offcanvas-header .btn-close {
                 font-size: 10px !important;
+            }
+
+            .menu {
+                font-size: 14px;
+            }
+
+            .menu>svg {
+                width: 24px;
+                font-size: 10px;
+            }
+
+            .header_content-wrap {
+                margin: 1rem 0rem;
+                background: rgba(0, 0, 0, .6);
+                padding: 1rem;
+            }
+
+            .header_content-wrap-info {
+                color: #fff;
             }
         }
 
