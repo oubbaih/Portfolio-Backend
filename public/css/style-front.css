@@ -13539,8 +13539,7 @@ fieldset:disabled .btn {
 }
 
 .footer {
-    margin-top: 5rem;
-    padding: 5rem;
+    margin-top: 3rem;
 }
 
 .footer_title {
@@ -13873,7 +13872,7 @@ fieldset:disabled .btn {
     position: fixed;
     z-index: 12;
     bottom: 5px;
-    right: 5px;
+    left: 5px;
     background-color: rgba(15, 20, 30, 0.5);
     width: 40px;
     height: 40px;
@@ -13889,7 +13888,7 @@ fieldset:disabled .btn {
 .contact_icon {
     text-decoration: none;
     text-align: center;
-    padding:12px;
+    padding: 12px;
 }
 
 .contact_icon svg {
