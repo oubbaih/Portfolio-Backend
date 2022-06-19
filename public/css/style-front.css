@@ -13574,39 +13574,42 @@ fieldset:disabled .btn {
     width: 100vw;
     overflow-x: hidden;
 }
-@media (max-width: 412px) {
-    .header {
-        min-height: calc(64vh);
-    }
-}
-
-/* // Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) {
-    .header {
-        min-height: calc(55vh);
-    }
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (max-width: 992px) {
-    .header {
-        min-height: calc(41vh);
-    }
-}
-
-/* // X-Large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {
-    .header {
-        min-height: calc(93vh);
-    }
-}
-
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (max-width: 1400px) {
     .header {
-        min-height: calc(64vh);
+        min-height: calc(64vh) !important;
     }
 }
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    .header {
+        min-height: calc(93vh) !important;
+    }
+}
+/* // Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .header {
+        min-height: calc(41vh) !important;
+    }
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .header {
+        min-height: calc(55vh) !important;
+    }
+}
+@media (max-width: 412px) {
+    .header {
+        min-height: calc(64vh) !important;
+    }
+}
+
+
+
+
+
+
+
 
 .header_logo {
     position: absolute;
