@@ -28,13 +28,7 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
-        @media (max-width: 575.98px) {
-            .header_personal {
-                left: -10%;
-                top: 50%;
-                transform: scaleX(-1);
-            }
-        }
+       
 
         .header_content-user {
             letter-spacing: 0;
@@ -55,7 +49,8 @@
 
             .btn-close {
                 color: #fff;
-                font-size: 12px;
+                font-size: 14px;
+                font-weight: bold;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
