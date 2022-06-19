@@ -76,7 +76,8 @@
 
         @media only screen and (max-width: 767px) {
             .footer {
-                text-align: center;
+                text-align: initial !important;
+                padding: 0px !important;
             }
 
             .footer_title {
@@ -315,15 +316,7 @@
                             <span>{{__('words.email')}}:{{$setting->email}} </span>
                             <span>{{__('words.phone')}}:{{$setting->phone}} </span>
                         </li>
-                        @if(Auth()->user())
-                        <a class="nav-link" href="/login">
-                            {{__('words.logout')}}
-                        </a>
-                        @else
-                        <a class="nav-link" href="/login">
-                            {{__('words.login')}}
-                        </a>
-                        @endif
+
 
                     </ul>
                 </div>
@@ -367,7 +360,16 @@
                             </a>
                         </li>
                         @endforeach
-
+                        <li class="nav-item">
+                            @if(Auth()->user())
+                            <a class="nav-link" href="/login">
+                                {{__('words.logout')}}
+                            </a>
+                            @else
+                            <a class="nav-link" href="/login">
+                                {{__('words.login')}}
+                            </a>
+                            @endif</li>
 
                     </ul>
                 </div>
