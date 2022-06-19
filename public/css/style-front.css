@@ -13872,8 +13872,8 @@ fieldset:disabled .btn {
 .contact {
     position: fixed;
     z-index: 12;
-    left: 10px;
-    bottom: 30px;
+    bottom: 5px;
+    right: 5px;
     background-color: rgba(15, 20, 30, 0.5);
     width: 40px;
     height: 40px;
@@ -13889,7 +13889,7 @@ fieldset:disabled .btn {
 .contact_icon {
     text-decoration: none;
     text-align: center;
-    padding: 6px;
+    padding:12px;
 }
 
 .contact_icon svg {
@@ -14209,8 +14209,8 @@ body {
 
 .goup {
     position: fixed;
-    bottom: 1.7rem;
-    right: 5.5rem;
+    bottom: 5px;
+    right: 5px;
     z-index: 20;
     width: 40px;
     height: 40px;
