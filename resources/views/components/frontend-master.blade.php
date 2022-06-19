@@ -35,8 +35,11 @@
         }
 
         .header_personal {
-            left: 10rem;
+            top: 1;
+            left: 0rem;
             right: initial;
+            transform: scaleX(-1);
+
         }
 
         @media only screen and (max-width: 767px) {
