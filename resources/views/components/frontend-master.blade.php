@@ -16,6 +16,7 @@
             src: url('fonts/HelveticaNowDisplay-Bold.ttf');
             font-family: 'Noto Sans Arabic', sans-serif;
         }
+
     </style>
     <!-- ==========================    Font Arab  Start    ==========================  -->
     @if (LaravelLocalization::getCurrentLocale() === 'ar')
@@ -40,9 +41,18 @@
 
         @media only screen and (max-width: 767px) {
             .header_personal {
-                top: 18rem;
                 left: 50%;
-                transform: translate(50%, -50%);
+                top: 50%;
+                transform: translate(-50%, 10%);
+                right: initial;
+            }
+
+            a.navbar-brand.logo>img:last-first {
+                width: 30px;
+            }
+
+            a.navbar-brand.logo>img:last-child {
+                width: 80px;
             }
         }
 
@@ -72,19 +82,51 @@
     </style>
     @endif
 
+    <style>
+        @media (max-width: 575.98px) {
+            .header_personal {
+                left: 0%;
+                margin-bottom: 2rem;
+            }
+
+            .header_personal {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, 10%);
+                right: initial;
+            }
+
+            a.navbar-brand.logo>img:first-first ,.menulogo:first-first{
+                width: 30px;
+            }
+
+            a.navbar-brand.logo>img:last-child ,.menulogo:last-first{
+                width: 80px;
+            }
+            .offcanvas-header .btn-close{
+                font-size: 10px;
+            }
+        }
+
+    </style>
+
     <!-- ==========================     Font Arab  End    ==========================  -->
     @yield('styles')
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ309K8G3S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ309K8G3S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-HZ309K8G3S');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HZ309K8G3S');
+
+    </script>
 </head>
 
 <body>
@@ -146,7 +188,8 @@
                             <img src="{{Storage::disk('s3')->url($setting->favicon)}}" alt="favicon" />
                             <img src="{{Storage::disk('s3')->url($setting->logo)}}" alt="logo" />
                         </a>
-                        <button type="button" class="btn-close"  id="close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" id="close" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
                     <!-- Menu Links  -->
                     <div class="offcanvas-body">
@@ -309,11 +352,11 @@
 
     <!-- ==========================    Main js End    ==========================  -->
     <script>
-     let menuBTN = document.getElementById('menu-btn');
-     menuBTN.addEventListener('click' , function(){
-        let offcanvas  = document.getElementById('menu-btn');
-     });
-                
+        let menuBTN = document.getElementById('menu-btn');
+        menuBTN.addEventListener('click', function () {
+            let offcanvas = document.getElementById('menu-btn');
+        });
+
     </script>
     @yield('scripts')
 
