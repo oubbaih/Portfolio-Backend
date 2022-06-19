@@ -13598,18 +13598,17 @@ fieldset:disabled .btn {
         min-height: calc(55vh) !important;
     }
 }
+
 @media (max-width: 412px) {
     .header {
-        min-height: calc(64vh) !important;
+        min-height: calc(69vh) !important;
     }
 }
-
-
-
-
-
-
-
+@media (max-width: 380px) {
+    .header {
+        min-height: calc(87vh) !important;
+    }
+}
 
 .header_logo {
     position: absolute;
