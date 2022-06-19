@@ -84,27 +84,31 @@
 
     <style>
         @media (max-width: 575.98px) {
-            .header_personal {
-                left: 0%;
-                margin-bottom: 2rem;
+            .header_content {
+                top: 40%;
+                width: 300px;
             }
 
+
             .header_personal {
-                left: 50%;
+                left: 0%;
                 top: 50%;
                 transform: translate(-50%, 10%);
                 right: initial;
             }
 
-            a.navbar-brand.logo>img:first-first ,.menulogo:first-first{
-                width: 30px;
+            .logo>img:first-first,
+            .menulogo:first-first {
+                width: 30px !important;
             }
 
-            a.navbar-brand.logo>img:last-child ,.menulogo:last-first{
-                width: 80px;
+            .logo>img:last-child,
+            .menulogo:last-first {
+                width: 80px !important;
             }
-            .offcanvas-header .btn-close{
-                font-size: 10px;
+
+            .offcanvas-header .btn-close {
+                font-size: 10px !important;
             }
         }
 
