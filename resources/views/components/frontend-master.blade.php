@@ -129,7 +129,8 @@
                 <img src="{{Storage::disk('s3')->url($setting->favicon)}}" alt="favicon" />
                 <img src="{{Storage::disk('s3')->url($setting->logo)}}" alt="logo" />
             </a>
-            <button class="navbar-toggler menu" type="button"  id="menu-btn" >
+            <button class="navbar-toggler menu" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" id="menu-btn" aria-controls="offcanvasNavbar">
                 {{__('words.menu')}}
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-text-paragraph" viewBox="0 0 16 16">
@@ -145,7 +146,7 @@
                             <img src="{{Storage::disk('s3')->url($setting->favicon)}}" alt="favicon" />
                             <img src="{{Storage::disk('s3')->url($setting->logo)}}" alt="logo" />
                         </a>
-                        <button type="button" class="btn-close" id="close"></button>
+                        <button type="button" class="btn-close"  id="close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <!-- Menu Links  -->
                     <div class="offcanvas-body">
