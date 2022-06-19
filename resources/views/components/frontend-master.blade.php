@@ -28,7 +28,7 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
 
-       
+
 
         .header_content-user {
             letter-spacing: 0;
@@ -68,9 +68,9 @@
 
         @media (max-width: 575.98px) {
             .header_personal {
-                left: -10%;
-                top: 50%;
-                transform: scaleX(-1);
+                left: -10% !important;
+                top: 50% !important;
+                transform: scaleX(-1) !important;
             }
         }
 
