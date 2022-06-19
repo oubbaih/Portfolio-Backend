@@ -21,6 +21,16 @@ window.addEventListener("load", function () {
     });
 });
 
-let btn = document.getElementById("loginid");
-
-btn.addEventListener("click", function (e) {});
+let menuBTN = document.getElementById("menu-btn");
+menuBTN.addEventListener("click", function () {
+    let offcanvas = document.getElementById("offcanvasNavbar");
+    offcanvas.classList.add("show");
+    offcanvas.style.visibility = "visible";
+});
+let closeBTN = document.getElementById("close");
+closeBTN.addEventListener("click", function () {
+    let offcanvas = document.getElementById("offcanvasNavbar");
+    // console.log(offcanvas);
+    offcanvas.classList.remove("show");
+    offcanvas.style.visibility = "";
+});
