@@ -13589,7 +13589,7 @@ fieldset:disabled .btn {
 /* // Large devices (desktops, 992px and up) */
 @media (max-width: 992px) {
     .header {
-        min-height: calc(41vh) !important;
+        min-height: calc(48vh) !important;
     }
 }
 /* // Medium devices (tablets, 768px and up) */
@@ -13599,6 +13599,11 @@ fieldset:disabled .btn {
     }
 }
 
+@media (max-width: 600px) {
+    .header {
+        min-height: calc(82vh) !important;
+    }
+}
 @media (max-width: 430px) {
     .header {
         min-height: calc(69vh) !important;
