@@ -21,9 +21,9 @@
     @section('header')
     <section id="header" class="header">
         <div class="container">
-            <div class="header_logo">
+            {{-- <div class="header_logo">
                 <img src="{{ Storage::disk('s3')->url($setting->bgImage)}}" class="header_logo-img" alt="header logo" />
-            </div>
+            </div> --}}
             <div class="row">
                 <div data-aos="fade-left">
                     <div class="col-4 header_personal d-md-block">
