@@ -13569,49 +13569,9 @@ fieldset:disabled .btn {
 
 .header {
     margin-top: 5rem;
-    min-height: calc(88vh);
+    height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-}
-/* // XX-Large devices (larger desktops, 1400px and up) */
-@media (max-width: 1400px) {
-    .header {
-        min-height: calc(64vh) !important;
-    }
-}
-/* // X-Large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {
-    .header {
-        min-height: calc(93vh) !important;
-    }
-}
-/* // Large devices (desktops, 992px and up) */
-@media (max-width: 992px) {
-    .header {
-        min-height: calc(48vh) !important;
-    }
-}
-/* // Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) {
-    .header {
-        min-height: calc(55vh) !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .header {
-        min-height: calc(82vh) !important;
-    }
-}
-@media (max-width: 430px) {
-    .header {
-        min-height: calc(69vh) !important;
-    }
-}
-@media (max-width: 380px) {
-    .header {
-        min-height: calc(87vh) !important;
-    }
 }
 
 .header_logo {
