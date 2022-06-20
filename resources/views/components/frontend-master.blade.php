@@ -41,7 +41,7 @@
 
 
             .header_personal {
-                left: 24%;
+                left: 50%;
                 top: 50%;
                 transform: translate(-50%, 10%);
                 right: initial;
