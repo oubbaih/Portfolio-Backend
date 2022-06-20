@@ -32,6 +32,14 @@ body {
     }
 }
 
+@media (min-width: 576px) and (max-width: 767) {
+    .header_personal {
+        top: 1;
+        left: 1;
+        right: initial;
+        transform: scaleX(-1);
+    }
+}
 @media (max-width: 575.98px) {
     .header_personal {
         left: 30%;
