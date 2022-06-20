@@ -34,6 +34,18 @@ body {
     z-index: 3;
 }
 
+@media only screen and (max-width: 768px) {
+    .header {
+        min-height: calc(82vh) !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .header {
+        min-height: calc(75vh) !important;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .header_content {
         top: 40%;
@@ -41,13 +53,16 @@ body {
         -ms-flex-pack: start;
         justify-content: flex-start;
     }
+
     .header_content-wrap {
         background-color: rgba(0, 0, 0, 0.6);
         padding: 2rem;
     }
+
     .header_content-wrap-info {
         color: #fff;
     }
+
     .header_personal {
         left: -2rem;
         transform: scaleX(-1) !important;
