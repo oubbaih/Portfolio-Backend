@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="icon" type="image/gif/png/svg" href="{{Storage::disk('s3')->url($setting->favicon)}}" />
     <link rel="stylesheet" href="{{asset('css/style-front.css')}}" />
     @yield('seo')
@@ -41,6 +41,46 @@
             right: initial;
             transform: scaleX(-1);
 
+        }
+
+        @media (max-width: 1200px) {
+            .header_personal {
+                top: 1;
+                left: 1;
+                right: initial;
+                transform: scaleX(-1);
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .header_personal {
+                left: 50%;
+                top: 32%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                right: initial;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .header_personal {
+                left: 30%;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .header_content {
+            position: absolute;
+            z-index: 3;
+        }
+
+        @media (max-width: 767.98px) {
+            .header_content {
+                top: 40%;
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+            }
         }
 
         @media only screen and (max-width: 767px) {
