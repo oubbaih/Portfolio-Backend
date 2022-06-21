@@ -9,10 +9,10 @@
     # RewriteCond %{HTTP:Authorization} .
     # RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
     # If we receive a forwarded http request from a proxy...
-    RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
 
     # ...or just a plain old http request directly from the client
-    RewriteCond %{HTTP:X-Forwarded-Proto} =""
+    RewriteCond %{HTTP:X-Forwarded-Proto} ="https"
     RewriteCond %{HTTPS} !=on
 
     # Redirect to https version
