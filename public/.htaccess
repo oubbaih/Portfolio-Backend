@@ -12,9 +12,8 @@
     RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
 
     # ...or just a plain old http request directly from the client
-    RewriteCond %{HTTP:X-Forwarded-Proto} ="https"
+    RewriteCond %{HTTP:X-Forwarded-Proto} =""
     RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 
     # Redirect to https version
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
