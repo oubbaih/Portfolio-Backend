@@ -5,14 +5,14 @@
 
     RewriteEngine On
     RewriteBase /
-    
+
     RewriteCond %{HTTP_HOST} ^www\. [NC]
     RewriteRule ^(.*)$ %{HTTP_HOST}$1 [C]
     RewriteRule ^www\.(.*)$ http://$1 [L,R=301]
-    # Force WWW. when no subdomain in host
-    RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$ [NC]
-    RewriteCond %{HTTPS}s ^on(s)|off [NC]
-    RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    # # Force WWW. when no subdomain in host
+    # RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$ [NC]
+    # RewriteCond %{HTTPS}s ^on(s)|off [NC]
+    # RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # Remove WWW. when subdomain(s) in host
     RewriteCond %{HTTP_HOST} ^www\. [NC]
