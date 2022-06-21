@@ -15,7 +15,6 @@
     RewriteCond %{HTTP:X-Forwarded-Proto} ="https"
     RewriteCond %{HTTPS} !=on
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
     # Redirect to https version
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
