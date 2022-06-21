@@ -12,13 +12,19 @@
     RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
 
     # ...or just a plain old http request directly from the client
-    RewriteCond %{HTTP:X-Forwarded-Proto} ="https"
+    RewriteCond %{HTTP:X-Forwarded-Proto} ="http"
     RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+
 
     # Redirect to https version
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+    RewriteCond %{HTTPS} on
+    RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
     # Put the rest of your rewrite rules here
 
     # Redirect Trailing Slashes If Not A Folder...
