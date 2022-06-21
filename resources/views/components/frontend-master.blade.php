@@ -9,8 +9,9 @@
 
     <link rel="icon" type="image/gif/png/svg" href="{{Storage::disk('s3')->url($setting->favicon)}}" />
     <link rel="stylesheet" href="{{asset('css/style-front.css')}}" />
+    <link rel="canonical" href="{{env('APP_URL')}}" />
+    <meta name="robots" content="index, follow ,max-snippet:20, max-image-preview:large" />
     @yield('seo')
-    <meta name="robots" content="noindex, nofollow" />
     <style>
         @font-face {
             font-family: 'Helvetica Now Display DW';

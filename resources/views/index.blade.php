@@ -1,8 +1,14 @@
 <x-frontend-master>
     @section('seo')
     <title>{{__('words.portfolio')}} | {{$setting->fullname}}</title>
-    <link rel="canonical" href="{{env('APP_URL')}}" />
     <meta name="description" content="{{$setting->description}}">
+    <meta property="og:url"
+        content="{{env('APP_URL')}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{$setting->fullname}}" />
+    <meta property="og:description" content="{{$setting->description}}" />
+    <meta property="og:image"
+        content="{{$setting->persnalImage}}" />
     @endsection
     @section('styles')
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,38 +27,35 @@
     @section('header')
     <section id="header" class="header">
         <div class="container">
-            {{-- <div class="header_logo">
-                <img src="{{ Storage::disk('s3')->url($setting->bgImage)}}" class="header_logo-img" alt="header logo" />
-            </div> --}}
-            <div class="row">
-                <div data-aos="fade-left">
-                    <div class="col-4 header_personal d-md-block">
-                        <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="header-personal-img"
-                            alt="personal image" />
-                    </div>
+        <div class="row">
+            <div data-aos="fade-left">
+                <div class="col-4 header_personal d-md-block">
+                    <img src="{{ Storage::disk('s3')->url($setting->persnalImage)}}" class="header-personal-img"
+                        alt="personal image" />
                 </div>
-                <div data-aos="fade-right">
-                    <div class="col-lg-7 col-md-6 header_content">
-                        <div class="space">
-                            <h5 class="header_content-user">{{$setting->fullname}}</h5>
-                            <h1 class="header_content-job h1"> {{$setting->jobTitle}}</h1>
-                            <div class="header_content-wrap">
-                                <p class="header_content-wrap-info">
-                                    {{$setting->description}}
-                                </p>
-                            </div>
-                            <div>
-                                <a href="#" class="header_content-links m-2">{{__('words.view_project')}}</a>
-                                {{__('words.or')}}
-                                <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
-                            </div>
-                            <div class="mt-2">
-                                <a href="/download" class="btn btn-outline-dark">{{__('words.cv')}}</a>
-                            </div>
+            </div>
+            <div data-aos="fade-right">
+                <div class="col-lg-7 col-md-6 header_content">
+                    <div class="space">
+                        <h5 class="header_content-user">{{$setting->fullname}}</h5>
+                        <h1 class="header_content-job h1"> {{$setting->jobTitle}}</h1>
+                        <div class="header_content-wrap">
+                            <p class="header_content-wrap-info">
+                                {{$setting->description}}
+                            </p>
+                        </div>
+                        <div>
+                            <a href="#" class="header_content-links m-2">{{__('words.view_project')}}</a>
+                            {{__('words.or')}}
+                            <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
+                        </div>
+                        <div class="mt-2">
+                            <a href="/download" class="btn btn-outline-dark">{{__('words.cv')}}</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -127,7 +130,7 @@
                         </div>
                         <div data-aos="fade-left">
                             <div class="work_link">
-                                 <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a>
+                                <a class="h1" href="{{route('contact.front')}}">{{__('words.lets_work_together')}}</a>
                                 <span>&#8594;</span>
                             </div>
                         </div>
