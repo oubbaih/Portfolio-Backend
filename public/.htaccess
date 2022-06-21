@@ -14,8 +14,8 @@
     # ...or just a plain old http request directly from the client
     RewriteCond %{HTTP:X-Forwarded-Proto} ="http"
     RewriteCond %{HTTPS} !=on
-
-
+    RewriteEngine On
+    RewriteBase /
     # Redirect to https version
 
     RewriteCond %{HTTPS} off
