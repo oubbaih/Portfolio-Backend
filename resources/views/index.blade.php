@@ -1,7 +1,9 @@
 <x-frontend-master>
     @section('seo')
+    <meta name="author" content="{{$setting->fullname}}">
     <title>{{__('words.portfolio')}} | {{$setting->fullname}}</title>
     <meta name="description" content="{{$setting->description}}">
+    <meta name="keyword" content="lahcen oubbaih portfolio freelancer web developer laravel php vuejs javascript">
     <meta property="og:url"
         content="{{env('APP_URL')}}" />
     <meta property="og:type" content="article" />

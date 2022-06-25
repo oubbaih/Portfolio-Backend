@@ -64,7 +64,8 @@
                             ],
                             ajax: { 
                                 "url": "{{ route('contact.list') }}",
-                                "dataSrc" : "",
+                                "type":"get",
+                                "dataSrc" : "data",
                             },
                             columns: [{
                                     data: 'id',

@@ -60,7 +60,8 @@
                             ],
                              ajax: { 
                                 "url": "{{ route('project.list') }}",
-                                "dataSrc" : "",
+                                "type":"get",
+                                "dataSrc" : "data",
                             },
                             columns: [{
                                     data: 'id',
