@@ -58,7 +58,10 @@
                             order: [
                                 [0, "desc"]
                             ],
-                            ajax: "{{ route('project.list') }}",
+                             ajax: { 
+                                "url": "{{ route('project.list') }}",
+                                "dataSrc" : "",
+                            },
                             columns: [{
                                     data: 'id',
                                     name: 'id'

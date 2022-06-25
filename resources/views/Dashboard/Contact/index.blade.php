@@ -62,7 +62,10 @@
                             order: [
                                 [0, "desc"]
                             ],
-                            ajax: "{{ route('contact.list') }}",
+                            ajax: { 
+                                "url": "{{ route('contact.list') }}",
+                                "dataSrc" : "",
+                            },
                             columns: [{
                                     data: 'id',
                                     name: 'id'
