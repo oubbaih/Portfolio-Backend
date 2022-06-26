@@ -273,9 +273,25 @@
                     <h5 class="footer_title">{{__('words.follow_me_on')}} —</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
+                            @if($setting->fb)
                             <a href="{{$setting->fb}}" class="nav-link">{{__('words.fb')}}</a>
+                            @endif
+                             @if($setting->yt)
                             <a href="{{$setting->yt}}" class="nav-link">{{__('words.yt')}}</a>
-                            <a href="{{$setting->ftw}}" class="nav-link">{{__('words.tw')}}</a>
+                             @endif
+                             @if($setting->tw)
+                            <a href="{{$setting->tw}}" class="nav-link">{{__('words.tw')}}</a>
+                             @endif
+                             @if($setting->ink)
+                            <a href="{{$setting->ink}}" class="nav-link">{{__('words.ink')}}</a>
+                             @endif
+                             @if($setting->lk)
+                            <a href="{{$setting->lk}}" class="nav-link">{{__('words.lk')}}</a>
+                             @endif
+                             @if($setting->tk)
+                            <a href="{{$setting->tk}}" class="nav-link">{{__('words.tk')}}</a>
+                             @endif
+
                         </li>
                     </ul>
                 </div>

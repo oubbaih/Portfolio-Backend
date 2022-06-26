@@ -38,6 +38,10 @@ return [
   'fb' => 'facebook',
   'yt' => 'youtube',
   'tw' => 'twitter',
+  'ink' => 'linkedin',
+  'lk' => 'github',
+  'tk' => 'tiktok',
+
   'casestudy' => 'case study',
   'agency' => 'Agency',
   'client' => 'client',
