@@ -47,9 +47,9 @@
                             </p>
                         </div>
                         <div>
-                            <a href="#" class="header_content-links m-2">{{__('words.view_project')}}</a>
+                            <a href="{{route('project.front')}}" class="header_content-links m-2">{{__('words.view_project')}}</a>
                             {{__('words.or')}}
-                            <a href="#" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
+                            <a href="{{route('about.front')}}" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
                         </div>
                         <div class="mt-2">
                             <a href="/download" class="btn btn-outline-dark">{{__('words.cv')}}</a>
