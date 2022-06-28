@@ -274,22 +274,22 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             @if($setting->fb)
-                            <a href="{{$setting->fb}}" class="nav-link">{{__('words.fb')}}</a>
+                            <a href="{{$setting->fb}}"  target="_blank" class="nav-link">{{__('words.fb')}}</a>
                             @endif
                              @if($setting->yt)
-                            <a href="{{$setting->yt}}" class="nav-link">{{__('words.yt')}}</a>
+                            <a href="{{$setting->yt}}" target="_blank" class="nav-link">{{__('words.yt')}}</a>
                              @endif
                              @if($setting->tw)
-                            <a href="{{$setting->tw}}" class="nav-link">{{__('words.tw')}}</a>
+                            <a href="{{$setting->tw}}" target="_blank" class="nav-link">{{__('words.tw')}}</a>
                              @endif
                              @if($setting->ink)
-                            <a href="{{$setting->ink}}" class="nav-link">{{__('words.ink')}}</a>
+                            <a href="{{$setting->ink}}" target="_blank" class="nav-link">{{__('words.ink')}}</a>
                              @endif
                              @if($setting->lk)
-                            <a href="{{$setting->lk}}" class="nav-link">{{__('words.lk')}}</a>
+                            <a href="{{$setting->lk}}" target="_blank" class="nav-link">{{__('words.lk')}}</a>
                              @endif
                              @if($setting->tk)
-                            <a href="{{$setting->tk}}" class="nav-link">{{__('words.tk')}}</a>
+                            <a href="{{$setting->tk}}" target="_blank" class="nav-link">{{__('words.tk')}}</a>
                              @endif
 
                         </li>
