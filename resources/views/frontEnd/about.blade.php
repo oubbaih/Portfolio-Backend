@@ -6,7 +6,7 @@
     @endsection
 
     <!-- ==========================    Loader  Start    ==========================  -->
-    @section('load')
+  @section('load')
         <div class="loader show" id="loading">
       <div class="loader_icon"></div>
       <div class="loader_text">
@@ -19,7 +19,7 @@
 
     <!-- ==========================    NavBar Start    ==========================  -->
 
-    <!-- ==========================    NavBar End    ==========================  -->
+<!-- ==========================    NavBar End    ==========================  -->
    @section('main') 
     <main class="about-main">
       <div class="container">
@@ -139,6 +139,9 @@
         <!-- ==========================    Work Together End     ==========================  -->
       </div>
     </main>
+
 @endsection
+
+
     <!-- ==========================    Footer Start      ==========================  -->
 </x-frontend-master> 
