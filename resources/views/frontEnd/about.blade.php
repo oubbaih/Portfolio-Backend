@@ -21,7 +21,7 @@
 
 <!-- ==========================    NavBar End    ==========================  -->
    @section('main') 
-    <main class="about-main">
+   <main class="about-main">
       <div class="container">
         <!-- ==========================    Mani Content Haeder Satrt    ==========================  -->
 
@@ -138,8 +138,7 @@
         </section>
         <!-- ==========================    Work Together End     ==========================  -->
       </div>
-    </main>
-
+    </main> 
 @endsection
 
 
