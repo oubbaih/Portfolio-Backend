@@ -47,7 +47,7 @@
                             {{__('words.or')}}
                             <a href="{{route('about.front')}}" class="header_content-links m-2">{{__('words.read_about_me')}}</a>
                         </div>
-                        <div class="mt-2">
+                        <div class="mt-3">
                             <a href="/download" class="btn btn-outline-dark">{{__('words.cv')}}</a>
                         </div>
                     </div>

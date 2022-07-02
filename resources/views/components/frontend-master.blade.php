@@ -29,77 +29,22 @@
             font-family: 'Noto Sans Arabic', sans-serif;
         }
     </style>
+    <!-- ==========================     Font Arab  End    ==========================  -->
+    @yield('styles')
     <!-- ==========================    Font Arab  Start    ==========================  -->
     @if (LaravelLocalization::getCurrentLocale() === 'ar')
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/front-style-rtl.css')}}">
-    @endif
-
     <style>
-        .main,
-        .footer {
-            overflow-x: hidden;
+        .loader_text{
+            left: auto !important;
+            right:5%;
+            
         }
-
-        @media (max-width: 575.98px) {
-            .header_content {
-                top: 40%;
-                width: 300px;
-            }
-
-
-            .header_personal {
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, 10%);
-                right: initial;
-            }
-
-            .logo>img:last-child,
-            .menulogo>img:last-child {
-                width: 100px;
-            }
-
-            .logo>img:first-child,
-            .menulogo>img:first-child {
-                width: 30px;
-            }
-
-            .offcanvas-header .btn-close {
-                font-size: 10px !important;
-            }
-
-            .menu {
-                font-size: 14px;
-            }
-
-            .menu>svg {
-                width: 24px;
-                font-size: 10px;
-            }
-
-            .header_content-wrap {
-                margin: 1rem 0rem;
-                background: rgba(0, 0, 0, .6);
-                padding: 1rem;
-            }
-
-            .header_content-wrap-info {
-                color: #fff;
-            }
-        }
-
-        .main {
-            overflow: hidden;
-        }
-
     </style>
-
-    <!-- ==========================     Font Arab  End    ==========================  -->
-    @yield('styles')
-
+    @endif
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ309K8G3S"></script>

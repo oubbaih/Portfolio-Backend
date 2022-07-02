@@ -7,4 +7,3 @@
         </div>
     </div>
   @endsection
-</x-frontend-master>
