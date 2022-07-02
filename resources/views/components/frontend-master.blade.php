@@ -28,7 +28,6 @@
             src: url('fonts/HelveticaNowDisplay-Bold.ttf');
             font-family: 'Noto Sans Arabic', sans-serif;
         }
-
     </style>
     <!-- ==========================    Font Arab  Start    ==========================  -->
     @if (LaravelLocalization::getCurrentLocale() === 'ar')

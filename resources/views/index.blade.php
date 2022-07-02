@@ -1,11 +1,12 @@
 <x-frontend-master>
     @section('seo')
-    <meta name="author" content="{{$setting->fullname}}">
+    {{-- <meta name="author" content="{{$setting->fullname}}">
     <title>{{$setting->fullname}} {{ __('words.seotitle')}} </title>
     <meta name="description" content="{{$setting->description}}">
     <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
-    <link rel="canonical" href="{{env('APP_URL')}}" />
-    
+    <link rel="canonical" href="{{env('APP_URL')}}" /> --}}
+      {!! SEOMeta::generate() !!}
+
     @endsection
     @section('styles')
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
