@@ -62,7 +62,7 @@ Route::get('/contact', ContactController::class . '@front')->name('contact.front
 // show Sing Project 
 Route::get('/project/{slug}', function ($slug) {
   $s = str_replace('-', ' ', $slug);
-  $project = Project::whereColumn('casestudy', $s);
+  $project = Project::all()->where('casestudy', $s)->first();
   return view('frontEnd.single-project', compact('project'));
 })->name('project.first');
 Route::get('/project', FrontController::class . '@front')->name('project.front');

@@ -72,4 +72,5 @@ return [
   'close' => 'close',
   'seotitle' => 'Full Stack Web Developer Freelancer',
   'projectsList' => 'Project List',
+  'pageerror' => 'Oops! Something is wrong',
 ];

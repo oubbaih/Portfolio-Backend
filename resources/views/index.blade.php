@@ -1,11 +1,11 @@
 <x-frontend-master>
     @section('seo')
-    {{-- <meta name="author" content="{{$setting->fullname}}">
+   <meta name="author" content="{{$setting->fullname}}">
     <title>{{$setting->fullname}} {{ __('words.seotitle')}} </title>
     <meta name="description" content="{{$setting->description}}">
     <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
-    <link rel="canonical" href="{{env('APP_URL')}}" /> --}}
-      {!! SEOMeta::generate() !!}
+    <link rel="canonical" href="{{env('APP_URL')}}" /> 
+    <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
 
     @endsection
     @section('styles')
@@ -97,15 +97,13 @@
 
                                 <img src=" {{ Storage::disk('s3')->url($project->featureImage)}}" class="card-img"
                                     alt=" {{$project->casestudy}}" />
-
-
                                 <div class="card-img-overlay">
                                     <p class="card-text">{{$project->year}}</p>
                                     <h5 class="card-title">
                                         {{$project->casestudy}}
                                     </h5>
                                     <a class="card-link"
-                                        href="{{route('project.first' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
+                                       href="{{route('project.first' ,str_replace(' ' , '-' ,$project->casestudy) )}}">{{__('words.view_case_study')}}<span>&#8594;</span>
                                     </a>
                                 </div>
                             </div>

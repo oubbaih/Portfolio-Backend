@@ -21,11 +21,9 @@ class Controller extends BaseController
     public function index()
     {
         $setting = Setting::all()->first();
-        // dd($setting);
         SEOMeta::setTitle($setting->jobTitle);
         SEOMeta::setDescription($setting->description);
         SEOMeta::addMeta('article:published_time', $setting->created_at->toW3CString(), 'property');
-        // SEOMeta::addMeta('article:section', $post->category, 'property');
         SEOMeta::addKeyword(['key1', 'key2', 'key3']);
         return view('index');
     }

@@ -71,6 +71,7 @@ return [
   'close' => 'أغلق',
   'seotitle' => 'مطور ويب  مستقل',
   'projectsList' => 'قائمة المشروع',
+  'pageerror' => 'أُووبس! هناك شئ غير صحيح',
 
 
 

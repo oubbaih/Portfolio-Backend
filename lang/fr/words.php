@@ -71,6 +71,7 @@ return [
   'close' => 'proche',
   'seotitle' => 'Freelance Développeur Web Full Stack',
   'projectsList' => 'Liste de projets',
+  'pageerror' => 'Oops! Quelque chose ne va pas',
 
 
 

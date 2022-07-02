@@ -95,7 +95,6 @@
         <div class="image-showcase">
             <div class="container">
                 <div class="row">
-                    
                     @if ($project->filename !=null)
                     @foreach ($project->filename as $file)
                     <img src="{{ Storage::disk('s3')->url($file)}}" class="img-fluid mt-5" alt="{{$loop->index}}">

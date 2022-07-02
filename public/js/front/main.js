@@ -17,7 +17,7 @@ let LoadinElemt = document.getElementById("loading");
 window.addEventListener("load", function () {
     this.setTimeout(() => {
         LoadinElemt.classList.remove("show");
-        LoadinElemt.classList.add("hide");
+        // LoadinElemt.classList.add("hide");
     });
 });
 
