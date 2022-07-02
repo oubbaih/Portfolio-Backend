@@ -18,10 +18,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="icon" type="image/gif/png/svg" href="{{Storage::disk('s3')->url($setting->favicon)}}" />
     <link rel="stylesheet" href="{{asset('css/style-front.css')}}" />
-    <link rel="canonical" href="{{env('APP_URL')}}" />
     <meta name="robots" content="index, follow ,max-snippet:20, max-image-preview:large" />
     @yield('seo')
     <style>
@@ -274,22 +272,22 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             @if($setting->fb)
-                            <a href="{{$setting->fb}}"  target="_blank" class="nav-link">{{__('words.fb')}}</a>
+                            <a  target="_blank" href="https://www.facebook.com/{{$setting->fb}}"  class="nav-link">{{__('words.fb')}}</a>
                             @endif
                              @if($setting->yt)
-                            <a href="{{$setting->yt}}" target="_blank" class="nav-link">{{__('words.yt')}}</a>
+                            <a href="https://www.youtube.com/{{$setting->yt}}" target="_blank" class="nav-link">{{__('words.yt')}}</a>
                              @endif
                              @if($setting->tw)
-                            <a href="{{$setting->tw}}" target="_blank" class="nav-link">{{__('words.tw')}}</a>
+                            <a href="https://twitter.com/{{$setting->tw}}" target="_blank" class="nav-link">{{__('words.tw')}}</a>
                              @endif
                              @if($setting->ink)
-                            <a href="{{$setting->ink}}" target="_blank" class="nav-link">{{__('words.ink')}}</a>
+                            <a href="https://www.linkedin.com/{{$setting->ink}}" target="_blank" class="nav-link">{{__('words.ink')}}</a>
                              @endif
                              @if($setting->lk)
-                            <a href="{{$setting->lk}}" target="_blank" class="nav-link">{{__('words.lk')}}</a>
+                            <a href="https://github.com/{{$setting->lk}}" target="_blank" class="nav-link">{{__('words.lk')}}</a>
                              @endif
                              @if($setting->tk)
-                            <a href="{{$setting->tk}}" target="_blank" class="nav-link">{{__('words.tk')}}</a>
+                            <a href="https://www.tiktok.com/{{$setting->tk}}" target="_blank" class="nav-link">{{__('words.tk')}}</a>
                              @endif
 
                         </li>

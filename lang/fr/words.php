@@ -69,6 +69,8 @@ return [
   'portfolio' => 'portefeuille',
   'cv' => 'Télécharger mon CV',
   'close' => 'proche',
+  'seotitle' => 'Freelance Développeur Web Full Stack',
+  'projectsList' => 'Liste de projets',
 
 
 

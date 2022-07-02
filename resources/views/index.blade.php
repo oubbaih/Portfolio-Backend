@@ -1,16 +1,11 @@
 <x-frontend-master>
     @section('seo')
     <meta name="author" content="{{$setting->fullname}}">
-    <title>{{__('words.portfolio')}} | {{$setting->fullname}}</title>
+    <title>{{$setting->fullname}} {{ __('words.seotitle')}} </title>
     <meta name="description" content="{{$setting->description}}">
-    <meta name="keyword" content="lahcen oubbaih portfolio freelancer web developer laravel php vuejs javascript">
-    <meta property="og:url"
-        content="{{env('APP_URL')}}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{$setting->fullname}}" />
-    <meta property="og:description" content="{{$setting->description}}" />
-    <meta property="og:image"
-        content="{{$setting->persnalImage}}" />
+    <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
+    <link rel="canonical" href="{{env('APP_URL')}}" />
+    
     @endsection
     @section('styles')
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

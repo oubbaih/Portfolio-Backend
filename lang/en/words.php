@@ -70,6 +70,6 @@ return [
   'year' => 'year',
   'cv' => 'Download My Resume',
   'close' => 'close',
-
-
+  'seotitle' => 'Full Stack Web Developer Freelancer',
+  'projectsList' => 'Project List',
 ];

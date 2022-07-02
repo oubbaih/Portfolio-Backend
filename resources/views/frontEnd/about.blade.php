@@ -1,8 +1,9 @@
 <x-frontend-master>
  @section('seo')
-            <title>{{__('words.portfolio')}} |{{\Illuminate\Support\Str::limit($about->present_title,40)}}</title>
-    <link rel="canonical" href="{{env('APP_URL')}}" />
-	<meta name="description" content="{{\Illuminate\Support\Str::limit($about->present_des,100)}}">
+     <link rel="canonical" href="{{env('APP_URL')}}/about" />
+    <title>{{__('words.portfolio')}} {{$about->present_title}}</title>
+	  <meta name="description" content="{{$about->present_des}}">
+    <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
     @endsection
 
     <!-- ==========================    Loader  Start    ==========================  -->

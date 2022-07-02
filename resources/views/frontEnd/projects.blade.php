@@ -1,8 +1,10 @@
 <x-frontend-master>
     @section('seo')
-    <title>{{__('words.portfolio')}} | Projects List</title>
-    <link rel="canonical" href="{{env('APP_URL')}}" />
-    <meta name="description" content="show all projects">
+    <title>{{$setting->fullname}} {{__('words.projectsList')}}</title>
+    <link rel="canonical" href="{{env('APP_URL')}}/project" />
+    <meta name="description" content="show case of my all projects that i worked in, include personal projects and also client projects">
+    <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
+
     @endsection
     @section('main')
     <div class="main" style="margin-top: 8rem;">
@@ -24,7 +26,7 @@
                                     {{$project->casestudy}}
                                 </h5>
                                 <a class="card-link"
-                                    href="{{route('project.first' , $project)}}">{{__('words.view_case_study')}}<span>&#8594;</span>
+                                    href="{{route('project.first' ,str_replace(' ' , '-' ,$project->casestudy) )}}">{{__('words.view_case_study')}}<span>&#8594;</span>
                                 </a>
                             </div>
                         </div>

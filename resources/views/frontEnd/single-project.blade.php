@@ -1,15 +1,8 @@
 <x-frontend-master>
     @section('seo')
-    <title>{{__('words.portfolio')}} | {{$project->casestudy}}</title>
-    <link rel="canonical" href="{{env('APP_URL')}}" />
+    <title>{{__('words.portfolio')}}{{$project->casestudy}}</title>
+    <link rel="canonical" href="{{env('APP_URL')}}/{{$project->casestudy}}" />
     <meta name="description" content="{{$project->description}}">
-     <meta property="og:url"
-        content="{{env('APP_URL')}}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{$project->casestudy}}" />
-    <meta property="og:description" content="{{$project->description}}" />
-    <meta property="og:image"
-        content="{{$project->featureImage}}" />
     @endsection
     <!-- ==========================    Loader  Start    ==========================  -->
     @section('load')

@@ -11,6 +11,8 @@ use App\Http\Controllers\Settings\SettingsController;
 use App\Http\Controllers\SitemapController;
 use App\Models\Project\Project;
 use App\Models\Settings\Setting;
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
@@ -58,7 +60,9 @@ Route::get('/contact', ContactController::class . '@front')->name('contact.front
 
 
 // show Sing Project 
-Route::get('/project/{project}', function (Project $project) {
+Route::get('/project/{slug}', function ($slug) {
+  $s = str_replace('-', ' ', $slug);
+  $project = Project::whereColumn('casestudy', $s);
   return view('frontEnd.single-project', compact('project'));
 })->name('project.first');
 Route::get('/project', FrontController::class . '@front')->name('project.front');
