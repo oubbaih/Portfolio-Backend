@@ -187,6 +187,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //Yarja DataTable
         Yajra\DataTables\DataTablesServiceProvider::class,
+        //seo package
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -216,6 +218,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        //seo setup
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
