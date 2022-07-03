@@ -1,6 +1,6 @@
 <x-frontend-master>
     @section('seo')
-    <title>{{$setting->fullname}} {{__('words.projectsList')}}</title>
+    <title>{{$setting->fullname}} | {{__('words.projectsList')}}</title>
     <link rel="canonical" href="{{env('APP_URL')}}/project" />
     <meta name="description" content="show case of my all projects that i worked in, include personal projects and also client projects">
     <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">

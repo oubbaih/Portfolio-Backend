@@ -1,6 +1,6 @@
 <x-frontend-master>
     @section('seo')
-    <title>{{__('words.portfolio')}}{{$project->casestudy}}</title>
+    <title>{{__('words.portfolio')}} | {{$project->casestudy}}</title>
     <link rel="canonical" href="{{env('APP_URL')}}/{{$project->casestudy}}" />
     <meta name="description" content="{{$project->description}}">
     @endsection

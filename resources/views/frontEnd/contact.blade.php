@@ -1,8 +1,8 @@
 <x-frontend-master>
  @section('seo')
-  <title>{{__('words.portfolio')}}{{__('words.contact')}}</title>
+  <title>{{__('words.portfolio')}} | {{__('words.contact')}}</title>
   <link rel="canonical" href="{{env('APP_URL')}}/contact" />
-	<meta name="description" content="$about->present_des}}">
+	<meta name="description" content="{{$about->present_des}}">
     <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
 
     @endsection

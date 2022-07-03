@@ -1,7 +1,7 @@
 <x-frontend-master>
     @section('seo')
    <meta name="author" content="{{$setting->fullname}}">
-    <title>{{$setting->fullname}} {{ __('words.seotitle')}} </title>
+    <title>{{$setting->fullname}} | {{ __('words.seotitle')}} </title>
     <meta name="description" content="{{$setting->description}}">
     <meta name="keyword" content="lahcen,oubbaih,portfolio,freelancer,web ,developer,remote work ,hiring me ,developer">
     <link rel="canonical" href="{{env('APP_URL')}}" /> 

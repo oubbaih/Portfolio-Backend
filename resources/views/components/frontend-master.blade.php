@@ -206,7 +206,7 @@
                     <ul class="nav flex-column">
                         @foreach($projects as $project)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('project.first' , $project)}}">{{$project->casestudy}}</a>
+                            <a class="nav-link" href="{{route('project.first' ,str_replace(' ' , '-' ,$project->casestudy) )}}">{{$project->casestudy}}</a>
                         </li>
                         @endforeach
                     </ul>
