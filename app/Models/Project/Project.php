@@ -2,6 +2,7 @@
 
 namespace App\Models\Project;
 
+use App\Models\Seo\Seo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
